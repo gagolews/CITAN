@@ -8,7 +8,6 @@ citEntry(entry = "Article",
   volume       = "5",
   number       = "4",
   pages        = "678--692",
-  url          = "http://www.ibspan.waw.pl/~gagolews/CITAN/",
   textVersion  =
   paste("Gagolewski, M. (2011).",
         "Bibliometric impact assessment with R and the CITAN package.",

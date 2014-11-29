@@ -19,7 +19,7 @@
 
 
 #' @include biblio.internal.R
-NA
+invisible(NULL)
 
 
 #' Given a list of authors' citation sequences, the function calculates
@@ -34,7 +34,7 @@ NA
 #' @param orderByColumn column to sort the results on. \code{1} for author
 #'        names, \code{2} for the first function in \code{f}, \code{3}
 #'        for the second, and so on.
-#' @param bestRanks if not \code{NULL}, only a given number of authors 
+#' @param bestRanks if not \code{NULL}, only a given number of authors
 #'        with the greatest impact (for each function in \code{f}) will be included in the output.
 #' @param verbose logical; \code{TRUE} to inform about the progress of the process.
 #' @return A data frame in which each row corresponds to the assessment
@@ -55,16 +55,16 @@ NA
 #' ##    11     4     1     0     0     0      # Citation count
 #' ## attr(,"IdAuthor")
 #' ## [1] 39264                                # IdAuthor
-#' ## 
+#' ##
 #' ## $`Xu Y.`
-#' ## 38680 38605 40035 40030 40124 39829 39745 29672 
-#' ##    30    14     8     6     6     5     3     0 
+#' ## 38680 38605 40035 40030 40124 39829 39745 29672
+#' ##    30    14     8     6     6     5     3     0
 #' ## attr(,"IdAuthor")
 #' ## [1] 39265
-#' ## 
+#' ##
 #' ## $`Wang Y.`
-#' ## 29992 29672 29777 32906 33858 33864 34704 
-#' ##     1     0     0     0     0     0     0 
+#' ## 29992 29672 29777 32906 33858 33864 34704
+#' ##     1     0     0     0     0     0     0
 #' ## attr(,"IdAuthor")
 #' ## [1] 39266
 #' print(lbsAssess(citseq,
@@ -87,14 +87,14 @@ lbsAssess <- function(citseq, f=list(length, index.h), captions=c("length", "ind
 	if (!class(citseq)=="list") stop("incorrect 'citseq'");
 	if (!is.null(bestRanks) && (!is.numeric(bestRanks) || bestRanks <= 0))
 		stop("incorrect 'bestRanks'");
-	
+
 	if (class(f) != "list") stop("incorrect 'f'");
 	if (class(captions) != "character") stop("incorrect 'captions'");
 	if (length(f) != length(captions)) stop("'f' and 'captions' must be of the same length");
-		
+
 	result <- data.frame(Name=names(citseq));
-	
-	
+
+
 	for (i in 1:length(f))
 	{
 		if (verbose) cat(sprintf("Calculating %s... ", captions[i]));
@@ -104,8 +104,8 @@ lbsAssess <- function(citseq, f=list(length, index.h), captions=c("length", "ind
 	names(result)[2:(length(f)+1)] <- captions;
 	result <- result[order(result[,orderByColumn]),]
 	rownames(result) <- NULL;
-	
-	
+
+
 	if (!is.null(bestRanks) && is.finite(bestRanks))
 	{
 		wh <- numeric(0);
