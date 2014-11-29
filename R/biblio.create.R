@@ -199,7 +199,7 @@
 #' @export
 lbsCreate <- function(conn, verbose=TRUE)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## --------- auxiliary function -------------------------------------------
@@ -300,11 +300,6 @@ lbsCreate <- function(conn, verbose=TRUE)
    );"
 
    .lbsCreateTable(conn, "Biblio_SourcesCategories", query, verbose);
-
-
-
-
-
 
 
 
@@ -427,6 +422,3 @@ lbsCreate <- function(conn, verbose=TRUE)
 
    return(TRUE);
 }
-
-
-

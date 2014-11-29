@@ -47,9 +47,9 @@
    was.factor <- is.factor(type);
    type <- as.factor(type);
    lev <- sprintf("'%s'", levels(type));
-   for (i in 1:length(CITAN:::.lbs_DocumentTypesFull))
+   for (i in 1:length(.lbs_DocumentTypesFull))
    {
-      lev[lev==(CITAN:::.lbs_DocumentTypesShort[i])] <- CITAN:::.lbs_DocumentTypesFull[i];
+      lev[lev==(.lbs_DocumentTypesShort[i])] <- .lbs_DocumentTypesFull[i];
    }
    levels(type) <- lev;
    if (!was.factor) type <- as.character(type);
@@ -68,8 +68,8 @@
    documentTypesShort <- character(length(documentTypes));
    for (i in 1:length(documentTypes))
       documentTypesShort[i] <- sqlSwitchOrNULL(documentTypes[i],
-         CITAN:::.lbs_DocumentTypesFull,
-         CITAN:::.lbs_DocumentTypesShort
+         .lbs_DocumentTypesFull,
+         .lbs_DocumentTypesShort
       );
 
    incorrect <- which(documentTypesShort == "NULL");

@@ -65,7 +65,7 @@ lbsFindDuplicateAuthors <- function(conn,
    aggressiveness=0
 )
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## -------- Auxiliary function ---------------------------------------------
@@ -75,7 +75,7 @@ lbsFindDuplicateAuthors <- function(conn,
       n <- length(idAuthors);
 
       if (n>2) {
-         window <- CITAN:::.gtk2.progressBar(0, n, info="Preparing data...");
+         window <- .gtk2.progressBar(0, n, info="Preparing data...");
       } else window <- NULL;
 
       info <- list();
@@ -96,7 +96,7 @@ lbsFindDuplicateAuthors <- function(conn,
             GROUP BY Biblio_Authors.IdAuthor",
          idAuthors[i])));
 
-         if (!is.null(window)) CITAN:::.gtk2.progressBar(i, n, window=window);
+         if (!is.null(window)) .gtk2.progressBar(i, n, window=window);
       }
 
       info <- info[order(sapply(info, function(x) x$Name))];
@@ -208,7 +208,7 @@ lbsFindDuplicateAuthors <- function(conn,
    {
       n <- length(what);
 
-      window <- CITAN:::.gtk2.progressBar(0, n, info="Preprocessing data...");
+      window <- .gtk2.progressBar(0, n, info="Preprocessing data...");
 
       mtch <- gregexpr("[^[:space:]]+", what);
       words <- list();
@@ -232,7 +232,7 @@ lbsFindDuplicateAuthors <- function(conn,
                words[[i]] <- c(words[[i]], wrd);
             }
          }
-         CITAN:::.gtk2.progressBar(i, n, window=window);
+         .gtk2.progressBar(i, n, window=window);
       }
 
       return(words);
@@ -272,7 +272,7 @@ lbsFindDuplicateAuthors <- function(conn,
 
       words <- .lbsFindDuplicateAuthors_split2Words(authors$Name, ignoreWords, minWordLength);
 
-      window <- CITAN:::.gtk2.progressBar(0, n, info=sprintf("Generating dependency graph for %g author names... ",n));
+      window <- .gtk2.progressBar(0, n, info=sprintf("Generating dependency graph for %g author names... ",n));
 
       rel <- list();
       length(rel) <- n;
@@ -312,7 +312,7 @@ lbsFindDuplicateAuthors <- function(conn,
             rel[[i]] <- unique(rel[[i]]);
          }
 
-         CITAN:::.gtk2.progressBar(i,n,window=window);
+         .gtk2.progressBar(i,n,window=window);
       }
 
       names(rel) <- authors$IdAuthor;
@@ -339,7 +339,7 @@ lbsFindDuplicateAuthors <- function(conn,
       k <- 1;
       n <- length(graph);
 
-      window <- CITAN:::.gtk2.progressBar(0, n, info=sprintf("Trying to group %g author names... ",n));
+      window <- .gtk2.progressBar(0, n, info=sprintf("Trying to group %g author names... ",n));
       selected <- rep(FALSE, n);
 
       for (i in 1:n)
@@ -368,7 +368,7 @@ lbsFindDuplicateAuthors <- function(conn,
 
 
 
-         CITAN:::.gtk2.progressBar(i, n, window=window);
+         .gtk2.progressBar(i, n, window=window);
       }
 
       x <- sapply(dups, function(x) length(x));
@@ -463,7 +463,7 @@ lbsFindDuplicateAuthors <- function(conn,
 #' @export
 lbsDeleteDocuments <- function(conn, idDocuments)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
    idDocuments <- unlist(idDocuments);
    if (!is.numeric(idDocuments) || length(idDocuments) == 0)
@@ -538,7 +538,7 @@ lbsDeleteDocuments <- function(conn, idDocuments)
 #' @export
 lbsMergeAuthors <- function(conn, idAuthors)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
    if (!is.list(idAuthors) || length(idAuthors) == 0 || !is.numeric(unlist(idAuthors)))
       stop("incorrect 'idAuthors'.");

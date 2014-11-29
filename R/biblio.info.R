@@ -42,7 +42,7 @@
 #' @export
 lbsGetInfoAuthors <- function(conn, idAuthors)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    if (is.null(idAuthors) || (class(idAuthors) != "numeric" && class(idAuthors) != "integer"))
@@ -102,7 +102,7 @@ lbsGetInfoAuthors <- function(conn, idAuthors)
 #' @export
 lbsGetInfoDocuments <- function(conn, idDocuments)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    if (is.null(idDocuments) || (class(idDocuments) != "numeric" && class(idDocuments) != "integer"))
@@ -152,7 +152,7 @@ lbsGetInfoDocuments <- function(conn, idDocuments)
 
       doc <- list(IdDocument=res[k,1], Authors=authors, Title=res[k,2], BibEntry=res[k,3],
          AlternativeId=res[k,4], Pages=res[k,5], Citations=res[k,6],
-         Year=res[k,7], Type=CITAN:::.lbs_DocumentType_ShortToFull(res[k,8]));
+         Year=res[k,7], Type=.lbs_DocumentType_ShortToFull(res[k,8]));
 
       class(doc) <- "docinfo";
 

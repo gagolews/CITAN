@@ -58,13 +58,13 @@ lbsFindDuplicateTitles <- function(conn,
    ignoreTitles.like=NULL,
    aggressiveness=1)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## ---------------- auxiliary function -----------------------------------------------------
    .lbsFindDuplicateTitles_getDups <- function(conn, surveyDescription, ignoreTitles.like, aggressiveness)
    {
-      surveyDescription  <- CITAN:::.lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
+      surveyDescription  <- .lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
 
       cat("Looking for documents with duplicate titles... ");
       dups <- list();
@@ -100,7 +100,7 @@ lbsFindDuplicateTitles <- function(conn,
          if (n <= 1) return(dups);
 
 
-         window <- CITAN:::.gtk2.progressBar(0, n, info="Looking for documents with duplicate titles...");
+         window <- .gtk2.progressBar(0, n, info="Looking for documents with duplicate titles...");
 
          res$Title <- toupper(res$Title);
 
@@ -115,7 +115,7 @@ lbsFindDuplicateTitles <- function(conn,
             k <- k+1;
             dups[[k]] <- i:(j-1);
 
-            CITAN:::.gtk2.progressBar(j-1,n,each=1,window=window);
+            .gtk2.progressBar(j-1,n,each=1,window=window);
             i <- j;
          }
       } else if (aggressiveness >= 1)
@@ -149,7 +149,7 @@ lbsFindDuplicateTitles <- function(conn,
             res$TitleComp <- (gsub("[^[:alpha:]]*", "", res$Title));
          } else
          {
-            window <- CITAN:::.gtk2.progressBar(i, n, info="Preparing data...");
+            window <- .gtk2.progressBar(i, n, info="Preparing data...");
             res$TitleComp <- character(n);
             mtch <- gregexpr("[[:alpha:]]+", res$Title);
             for (i in 1:n)
@@ -168,7 +168,7 @@ lbsFindDuplicateTitles <- function(conn,
                      sep="", collapse=""));
                }
 
-               CITAN:::.gtk2.progressBar(i, n, window=window);
+               .gtk2.progressBar(i, n, window=window);
             }
          }
 
@@ -176,7 +176,7 @@ lbsFindDuplicateTitles <- function(conn,
          res <- res[order(res$TitleComp),];
 
 
-         window <- CITAN:::.gtk2.progressBar(0, n, info="Looking for documents with duplicate titles...");
+         window <- .gtk2.progressBar(0, n, info="Looking for documents with duplicate titles...");
 
          k <- 0;
          i <- 1;
@@ -194,7 +194,7 @@ lbsFindDuplicateTitles <- function(conn,
                dups[[k]] <- i:(j-1);
             }
 
-            CITAN:::.gtk2.progressBar(j-1,n,each=1,window=window);
+            .gtk2.progressBar(j-1,n,each=1,window=window);
             i <- j;
          }
       }
@@ -268,7 +268,7 @@ lbsFindDuplicateTitles <- function(conn,
    for (i in 1:n)
    {
 #' @TODO: Check whether .gtk2.selectDocuments can be moved as an internal function
-      ret <- CITAN:::.gtk2.selectDocuments(conn, dups[[i]], sprintf("Select documents to remove (stage %g of %g)", i, n), remove=TRUE);
+      ret <- .gtk2.selectDocuments(conn, dups[[i]], sprintf("Select documents to remove (stage %g of %g)", i, n), remove=TRUE);
 
       if (is.null(ret))
          return(removed);

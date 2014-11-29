@@ -44,7 +44,7 @@
 #' @export
 lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    if (!is.null(names.like) && class(names.like) != "character")
@@ -126,10 +126,10 @@ lbsSearchDocuments <- function(conn, titles.like=NULL, idAuthors=NULL,
    surveyDescription=NULL
 )
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
-   surveyDescription  <- CITAN:::.lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
-   documentTypesShort <- CITAN:::.lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
+   surveyDescription  <- .lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
+   documentTypesShort <- .lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
 
 
    if (!is.null(titles.like) && class(titles.like) != "character")

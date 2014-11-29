@@ -43,7 +43,7 @@
 #' @export
 lbsClear <- function(conn, verbose=TRUE)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
    dbBeginTransaction(conn);
 
@@ -109,7 +109,7 @@ lbsClear <- function(conn, verbose=TRUE)
 #' @export
 lbsDeleteAllAuthorsDocuments <- function(conn, verbose=TRUE)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    if (verbose) cat(sprintf("Deleting all author and document information... "));

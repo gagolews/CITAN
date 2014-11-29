@@ -35,7 +35,7 @@
 #' @export
 lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename="lbsTidy_Merged")
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
    ## REMOVE ALL AUTHORS WITHOUT DOCUMENTS
    dbExecQuery(conn, "DELETE FROM Biblio_Authors WHERE IdAuthor IN (

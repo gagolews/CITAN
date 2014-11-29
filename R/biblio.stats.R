@@ -68,7 +68,7 @@ lbsDescriptiveStats <- function(conn,
    cex.caption=1
 )
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## ---------------------- AUXILIARY FUNCTION -------------------------------
@@ -181,8 +181,8 @@ lbsDescriptiveStats <- function(conn,
    ## -----------------------------------------------------
    ## Data set restrictions & subset stats
 
-   surveyDescription  <- CITAN:::.lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
-   documentTypesShort <- CITAN:::.lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
+   surveyDescription  <- .lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
+   documentTypesShort <- .lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
 
 
 

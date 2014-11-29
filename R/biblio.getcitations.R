@@ -89,14 +89,13 @@ lbsGetCitations <- function(conn,
 	verbose=TRUE
 )
 {
-	CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+	.lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 	# -----------------------------------------------------
 	# Data set restrictions & subset stats
 
-	surveyDescription  <- CITAN:::.lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
-	documentTypesShort <- CITAN:::.lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
-
+	surveyDescription  <- .lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
+	documentTypesShort <- .lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
 
 
 	# Get subQueryWhere
@@ -159,7 +158,7 @@ lbsGetCitations <- function(conn,
 	if (verbose)
 	{
 		cat("Creating citation sequences... ");
-		window <- CITAN:::.gtk2.progressBar(0, n, info=sprintf("Creating %g citation sequences... ",n));
+		window <- .gtk2.progressBar(0, n, info=sprintf("Creating %g citation sequences... ",n));
 	}
 
 	while (i <= n)
@@ -190,7 +189,7 @@ lbsGetCitations <- function(conn,
 			k <- k+1L;
 		}
 
-		if (verbose) CITAN:::.gtk2.progressBar(i,n,window=window);
+		if (verbose) .gtk2.progressBar(i,n,window=window);
 
 		i <- i+1L;
 	}

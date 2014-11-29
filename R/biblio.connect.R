@@ -57,7 +57,7 @@ lbsConnect <- function(dbfilename)
       warning("Your Local Bibliometric Storage is empty. Use lbsCreate(...) to establish one.");
    } else if (any((tables == "Biblio_Countries") | (tables == "Biblio_Languages")))
    {
-      warning("Your Local Bibliometric Storage seems to be created by an older version of CITAN. Please re-create the database.");
+      warning("Your Local Bibliometric Storage seems to be created with an older version of CITAN. Please re-create the database.");
    }
 
    return(conn);
@@ -78,12 +78,7 @@ lbsConnect <- function(dbfilename)
 #' @export
 lbsDisconnect <- function(conn)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on an invalid/dead connection
 
    dbDisconnect(conn);
 }
-
-
-
-
-

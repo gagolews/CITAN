@@ -26,14 +26,14 @@
    if (remove) stopifnot(n > 1);
 
    if (n>2) {
-      window <- CITAN:::.gtk2.progressBar(0, n, info="Preparing data...");
+      window <- .gtk2.progressBar(0, n, info="Preparing data...");
    } else window <- NULL;
 
    info <- list();
    for (i in 1:n)
    {
       info[[i]] <- lbsGetInfoDocuments(conn, idDocuments[i])[[1]];
-      if (!is.null(window)) CITAN:::.gtk2.progressBar(i, n, window=window);
+      if (!is.null(window)) .gtk2.progressBar(i, n, window=window);
    }
 
 

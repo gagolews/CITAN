@@ -80,7 +80,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    excludeRows=NULL,  updateDocumentIfExists=TRUE,
    warnSourceTitle=TRUE, warnExactDuplicates=FALSE, verbose=TRUE)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## --------- auxiliary function -------------------------------------------
@@ -314,8 +314,8 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    data$Pages <- sqlNumericOrNULL(data$PageEnd-data$PageStart+1);
    data$Citations <- ifelse(is.finite(data$Citations), data$Citations, 0);
    data$DocumentType <- sqlSwitchOrNULL(data$DocumentType,
-            CITAN:::.lbs_DocumentTypesFull,
-            CITAN:::.lbs_DocumentTypesShort
+            .lbs_DocumentTypesFull,
+            .lbs_DocumentTypesShort
          );
 
    ## PREPARE authors
@@ -349,7 +349,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    if (verbose)
    {
       cat(sprintf("Importing %g authors... ", p));
-      window <- CITAN:::.gtk2.progressBar(0, p,
+      window <- .gtk2.progressBar(0, p,
          info=sprintf("Importing %g authors...", p));
    }
 
@@ -372,7 +372,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
       }
       hashAuthors[hashAuthorNames[i]] <- idAuthor;
 
-      if (verbose) CITAN:::.gtk2.progressBar(i,p,window=window);
+      if (verbose) .gtk2.progressBar(i,p,window=window);
    }
    dbCommit(conn);
    if (verbose) cat(sprintf("%g new authors added.\n", k));
@@ -382,7 +382,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    k <- 0L;
 
    if (verbose)
-      window <- CITAN:::.gtk2.progressBar(0, n,
+      window <- .gtk2.progressBar(0, n,
          info=sprintf("Importing %g documents to %s/%s...",
          n, surveyDescription, originalFilename));
 
@@ -397,7 +397,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
          k <- k+1L;
       }
 
-      if (verbose) CITAN:::.gtk2.progressBar(i,n,window=window);
+      if (verbose) .gtk2.progressBar(i,n,window=window);
    }
    dbCommit(conn);
 

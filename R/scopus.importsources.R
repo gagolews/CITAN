@@ -44,7 +44,7 @@
 #' @seealso \code{\link{Scopus_ASJC}}, \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{lbsConnect}}, \code{\link{lbsCreate}}
 Scopus_ImportSources <- function(conn, verbose=T)
 {
-   CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
+   .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
    ## ---- check if 3 tables used here are empty -----------------------------
@@ -112,8 +112,8 @@ Scopus_ImportSources <- function(conn, verbose=T)
          as.integer(Scopus_SourceList$Status == "Active"),
          as.integer(Scopus_SourceList$OpenAccess != "Not OA"),
          sqlSwitchOrNULL(Scopus_SourceList$Type,
-            CITAN:::.lbs_SourceTypesFull,
-            CITAN:::.lbs_SourceTypesShort
+            .lbs_SourceTypesFull,
+            .lbs_SourceTypesShort
          ),
          sqlNumericOrNULL(Scopus_SourceList$SJR_2009),
          sqlNumericOrNULL(Scopus_SourceList$SNIP_2009),
@@ -137,7 +137,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
 
 
 
-      if (verbose) window <- CITAN:::.gtk2.progressBar(0, n, info="Importing source list... ");
+      if (verbose) window <- .gtk2.progressBar(0, n, info="Importing source list... ");
 
 
       ## ----- exec    queries ------------------------
@@ -173,7 +173,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
             omitted <<- c(omitted, i);
          });
 
-         if (verbose) CITAN:::.gtk2.progressBar(i, n, window=window);
+         if (verbose) .gtk2.progressBar(i, n, window=window);
       }
       dbCommit(conn);
 
