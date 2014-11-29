@@ -29,25 +29,4 @@ Depends:
 Imports:
     RGtk2,
     hash,
-    ADGofTest
-Collate:
-    'CITAN-package.R'
-    'biblio.internal.R'
-    'biblio.assess.R'
-    'biblio.clear.R'
-    'biblio.connect.R'
-    'biblio.create.R'
-    'biblio.duplicates.authors.R'
-    'biblio.duplicates.documents.R'
-    'biblio.getcitations.R'
-    'biblio.import.R'
-    'biblio.info.R'
-    'biblio.search.R'
-    'biblio.stats.R'
-    'biblio.tidy.R'
-    'execquery.R'
-    'rgtk2.R'
-    'scopus.data.R'
-    'scopus.importsources.R'
-    'scopus.readcsv.R'
-    'string.R'
+    stringi

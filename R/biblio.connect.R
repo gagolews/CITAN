@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,11 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
 
 
 #' Connects to a Local Bibliometric Storage handled by the SQLite engine
@@ -84,7 +79,7 @@ lbsConnect <- function(dbfilename)
 lbsDisconnect <- function(conn)
 {
    CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
-   
+
    dbDisconnect(conn);
 }
 

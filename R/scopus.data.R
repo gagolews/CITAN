@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,11 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
 
 
 #' List of Elsevier's \emph{SciVerse Scopus} covered titles (journals, conference proceedings, book series, etc.)
@@ -61,7 +56,7 @@ NA
 #' \url{http://info.scopus.com/journalmetrics/sjr.html}\cr
 #' \url{http://info.scopus.com/journalmetrics/snip.html}\cr
 #' @keywords Scopus, ASJC, journal, conference, proceedings
-NA
+invisible(NULL)
 
 
 #' List of Elsevier's \emph{SciVerse Scopus} ASJC (All Science. Journals Classification)
@@ -84,7 +79,4 @@ NA
 #' @author Marek Gagolewski \email{gagolews@@ibspan.waw.pl}
 #' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}
 #' @keywords Scopus, ASJC, journal
-NA
-
-
-
+invisible(NULL)

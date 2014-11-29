@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,10 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
 
 
 
@@ -52,7 +48,7 @@ lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename
    cat(sprintf("Deleted %g authors with no documents.\n", chg));
 
 
-   
+
    ## FIX ALL DOCUMENTS WITH NO SURVEY INFO
    idDocNoSurvey <- dbGetQuery(conn, "SELECT Biblio_Documents.IdDocument FROM Biblio_Documents LEFT JOIN Biblio_DocumentsSurveys ON Biblio_Documents.IdDocument=Biblio_DocumentsSurveys.IdDocument WHERE Biblio_DocumentsSurveys.IdSurvey IS NULL");
    n <- nrow(idDocNoSurvey);
@@ -67,7 +63,7 @@ lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename
       );
       dbExecQuery(conn, query, TRUE);
       idSurvey <- (as.numeric(dbGetQuery(conn, "SELECT last_insert_rowid()")[1,1]));
-   
+
       dbBeginTransaction(conn);
       for (i in 1:n)
       {
@@ -78,9 +74,9 @@ lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename
       }
       dbCommit(conn);
    }
-   
+
    cat(sprintf("Fixed %g documents with no survey information.\n", n));
-   
+
    ## VACUUM
    dbExecQuery(conn, "VACUUM", FALSE);
 

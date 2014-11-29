@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,12 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
-
 
 
 #' Creates ordered citation sequences of authors in a Local Bibliometric Storage.
@@ -62,16 +56,16 @@ NA
 #' ##    11     4     1     0     0     0      # Citation count
 #' ## attr(,"IdAuthor")
 #' ## [1] 39264                                # IdAuthor
-#' ## 
+#' ##
 #' ## $`Xu Y.`
-#' ## 38680 38605 40035 40030 40124 39829 39745 29672 
-#' ##    30    14     8     6     6     5     3     0 
+#' ## 38680 38605 40035 40030 40124 39829 39745 29672
+#' ##    30    14     8     6     6     5     3     0
 #' ## attr(,"IdAuthor")
 #' ## [1] 39265
-#' ## 
+#' ##
 #' ## $`Wang Y.`
-#' ## 29992 29672 29777 32906 33858 33864 34704 
-#' ##     1     0     0     0     0     0     0 
+#' ## 29992 29672 29777 32906 33858 33864 34704
+#' ##     1     0     0     0     0     0     0
 #' ## attr(,"IdAuthor")
 #' ## [1] 39266
 #' print(lbsAssess(citseq,
@@ -96,15 +90,15 @@ lbsGetCitations <- function(conn,
 )
 {
 	CITAN:::.lbsCheckConnection(conn); # will stop on invalid/dead connection
-	
+
 	# -----------------------------------------------------
 	# Data set restrictions & subset stats
-	
+
 	surveyDescription  <- CITAN:::.lbs_PrepareRestriction_SurveyDescription(conn, surveyDescription);
 	documentTypesShort <- CITAN:::.lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
-	
-	
-	
+
+
+
 	# Get subQueryWhere
 	if (length(documentTypesShort)>0)
 	{
@@ -114,8 +108,8 @@ lbsGetCitations <- function(conn,
 
 	if (!is.null(surveyDescription))
 		subQueryWhere <- paste(c(subQueryWhere, sprintf(" Description='%s'", surveyDescription)), collapse=" AND ");
-	
-	
+
+
 	if (verbose)
 	{
 		cat("Data set restrictions:\n");
@@ -125,11 +119,11 @@ lbsGetCitations <- function(conn,
 	}
 
 	# ---------------------------------------------------------------------
-	
-	
+
+
 	if (!is.null(idAuthors) && (!is.numeric(idAuthors) || any(!is.finite(idAuthors))))
 		stop("incorrect 'idAuthors' given");
-		
+
 	if (length(idAuthors) == 0)
 	{
 		query <- sprintf("
@@ -147,27 +141,27 @@ lbsGetCitations <- function(conn,
 			) AS Docs ON Docs.IdDocument=Biblio_AuthorsDocuments.IdDocument
 		);",
 		subQueryWhere);
-		
+
 		idAuthors <- dbGetQuery(conn, query)[,1];
-		
+
 		if (length(idAuthors) == 0) return(list());
 	}
-	
-	
-	
-	
+
+
+
+
 	i <- 1L;
 	k <- 0L;
 	n <- as.integer(length(idAuthors));
 	citseq <- list();
 	length(citseq) <- n;
-	
+
 	if (verbose)
 	{
 		cat("Creating citation sequences... ");
 		window <- CITAN:::.gtk2.progressBar(0, n, info=sprintf("Creating %g citation sequences... ",n));
 	}
-	
+
 	while (i <= n)
 	{
 		query <- sprintf("
@@ -186,7 +180,7 @@ lbsGetCitations <- function(conn,
 		);
 
 		AuthorInfo <- dbGetQuery(conn, query);
-		
+
 		if (nrow(AuthorInfo) > 0)
 		{
 			names(citseq)[i] <- AuthorInfo$Name[1];
@@ -195,14 +189,14 @@ lbsGetCitations <- function(conn,
 			attr(citseq[[i]], "IdAuthor") <- idAuthors[i];
 			k <- k+1L;
 		}
-	
+
 		if (verbose) CITAN:::.gtk2.progressBar(i,n,window=window);
-		
+
 		i <- i+1L;
 	}
-	
-	
+
+
 	if (verbose) cat(sprintf("OK, %g of %g records read.\n", k, n));
-	
+
 	return(citseq);
 }

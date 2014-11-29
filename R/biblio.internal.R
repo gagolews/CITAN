@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -17,8 +17,8 @@
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
 
 
-#' /internal/
-#' stops if connection is invalid or dead
+# /internal/
+# stops if connection is invalid or dead
 .lbsCheckConnection <- function(conn)
 {
    if (!class(conn) == "SQLiteConnection")
@@ -28,20 +28,20 @@
 }
 
 
-#' /internal/
+# /internal/
 .lbs_SourceTypesFull  <- c("Book Series", "Conference Proceedings", "Journal");
 
-#' /internal/
+# /internal/
 .lbs_SourceTypesShort <- c("'bs'",        "'cp'",                   "'jo'");
 
 
-#' /internal/
+# /internal/
 .lbs_DocumentTypesFull  <- c("Article", "Article in Press", "Book", "Conference Paper", "Editorial", "Erratum", "Letter", "Note", "Report", "Review", "Short Survey");
 
-#' /internal/
+# /internal/
 .lbs_DocumentTypesShort <- c("'ar'",    "'ip'",             "'bk'", "'cp'",             "'ed'",      "'er'",    "'le'",   "'no'", "'rp'",   "'re'",   "'sh'");
 
-#' /internal/
+# /internal/
 .lbs_DocumentType_ShortToFull <- function(type)
 {
    was.factor <- is.factor(type);
@@ -57,7 +57,7 @@
 }
 
 
-#' /internal/
+# /internal/
 .lbs_PrepareRestriction_DocumentTypes <- function(conn, documentTypes)
 {
    if (is.null(documentTypes)) return(NULL);
@@ -88,7 +88,7 @@
 
 
 
-#' /internal/
+# /internal/
 .lbs_PrepareRestriction_SurveyDescription <- function(conn, surveyDescription)
 {
    if (is.null(surveyDescription)) return(NULL);

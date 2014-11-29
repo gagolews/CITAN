@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,13 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
-
-
 
 
 #' Executes an SQL query and immediately frees all allocated resources.

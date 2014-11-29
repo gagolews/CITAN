@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,10 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
 
 
 #' Finds authors by name.
@@ -74,7 +70,7 @@ lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
          query <- paste(query, sprintf("(AuthorGroup='%s')", sqlEscapeTrim(group[i])), sep=" OR ");
       query <- paste(query, ")");
    }
-   
+
    return(dbGetQuery(conn, query)[,1]);
 }
 
@@ -213,7 +209,7 @@ lbsSearchDocuments <- function(conn, titles.like=NULL, idAuthors=NULL,
       subquery6 <- "0";
       for (i in 1:length(alternativeId))
          subquery6 <- paste(subquery6, sprintf("(AlternativeId='%s')", sqlEscapeTrim(alternativeId[i])), sep=" OR ");
-   }   
+   }
 
 
    query <- sprintf("SELECT DISTINCT Biblio_Documents.IdDocument

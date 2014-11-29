@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,14 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
-
-
-
 
 
 #' Imports bibliographic data from a special 11-column \code{data.frame} object
@@ -220,7 +212,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
 
          # Insert document
-         query <- sprintf("INSERT OR FAIL INTO Biblio_Documents ('IdSource', 
+         query <- sprintf("INSERT OR FAIL INTO Biblio_Documents ('IdSource',
             'AlternativeId', 'Title', 'BibEntry', 'Year', 'Pages', 'Citations', 'Type')
             VALUES(%s, '%s', '%s', '%s', %s, %s, %s, %s);",
             idSource,
@@ -363,7 +355,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    k <- 0L;
    dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
-   dbBeginTransaction(conn); 
+   dbBeginTransaction(conn);
    for (i in 1:p)
    {
       # Get idAuthor (and add him/her if necessary)
@@ -379,14 +371,14 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
          idAuthor <- idAuthor[1,1];
       }
       hashAuthors[hashAuthorNames[i]] <- idAuthor;
-         
+
       if (verbose) CITAN:::.gtk2.progressBar(i,p,window=window);
    }
    dbCommit(conn);
    if (verbose) cat(sprintf("%g new authors added.\n", k));
-   
+
    ## -------------------------------------------------------------------
-   
+
    k <- 0L;
 
    if (verbose)

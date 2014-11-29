@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,12 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
-
 
 
 #' Imports \emph{SciVerse Scopus} covered titles and their ASJC codes to an empty Local Bibliometric Storage (\acronym{LBS}).
@@ -67,7 +61,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
 
 
    ## ----- auxiliary functions ----------------------------------------------
-    
+
    # /internal/
    # Imports data from Scopus_ASJC to Biblio_Categories
    .Scopus_ImportSources_Categories <- function(conn, verbose)
@@ -95,7 +89,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
    }
 
 
-   
+
    ## ----- auxiliary function ----------------------------------------------
 
    # /internal/
@@ -187,7 +181,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
 
       ## -----  now check which rows were added and report missing values ------
       if (verbose) cat(sprintf("Done, %g of %g records added; %g ASJC codes processed.\n", n-length(omitted), n, k));
-      
+
       if (length(omitted) > 0 && verbose)
       {
          cat(sprintf("Note: %g records omitted @ rows=%s.\n",
@@ -199,7 +193,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
 
 
 
-   
+
    ## ---- Import categories and sources -----------------------------------
 
    .Scopus_ImportSources_Categories(conn, verbose)

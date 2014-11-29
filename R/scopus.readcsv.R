@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -17,15 +17,9 @@
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
 
 
-#' @include biblio.internal.R
-NA
-
-
-
-
 #' Reads bibliography entries from a UTF-8 encoded CSV file.
 #'
-#' 
+#'
 #'
 #' The  \code{\link{read.csv}} function is used to read the bibliography.
 #' You may therefore freely modify its behavior
@@ -122,7 +116,7 @@ Scopus_ReadCSV <- function(filename, stopOnErrors=TRUE, dbIdentifier='Scopus', a
 
       if (stopOnErrors) stop(msg) else warning(msg);
    }
-   
+
 
    if (!is.na(alternativeIdPattern))
    {
@@ -197,4 +191,3 @@ Scopus_ReadCSV <- function(filename, stopOnErrors=TRUE, dbIdentifier='Scopus', a
    attr(datafile, "filename") <- filename;
    return(datafile);
 }
-

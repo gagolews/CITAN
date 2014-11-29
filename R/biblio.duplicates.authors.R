@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -15,14 +15,6 @@
 ##
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
-
-
-#' @include biblio.internal.R
-NA
-
-
-
-
 
 
 #' Indicates, by finding similarities between authors' names,
@@ -209,7 +201,7 @@ lbsFindDuplicateAuthors <- function(conn,
       } else return(integer(0));
    }
    ## --------------------------------------------------------------------------
-   
+
 
    ## -------- Auxiliary function ----------------------------------------------
    .lbsFindDuplicateAuthors_split2Words <- function(what, ignoreWords, minWordLength)
@@ -394,7 +386,7 @@ lbsFindDuplicateAuthors <- function(conn,
 
 
 
-   
+
    orderResultsBy <- match.arg(orderResultsBy);
 
    if (!is.numeric(aggressiveness) || length(aggressiveness)!=1 || aggressiveness<0)

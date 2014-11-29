@@ -1,6 +1,6 @@
-## This file is part of the CITAN library.
+## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2012 Marek Gagolewski
+## Copyright 2011-2014 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 
 
 
-#' /internal/
+# /internal/
 .gtk2.selectDocuments <- function(conn, idDocuments, title="List of documents", remove=FALSE, parent=NULL)
 {
    stopifnot(is.numeric(idDocuments))
@@ -115,14 +115,7 @@
 }
 
 
-
-
-
-
-
-
-
-#' /internal/
+# /internal/
 .gtk2.progressBar <- function(i, M, each=max(1,floor(M/100)), info=NULL, window=NULL)
 {
    strTimeLeft <- "Estimated time left: %g secs.";
@@ -189,4 +182,3 @@
 
    return(window);
 }
-
