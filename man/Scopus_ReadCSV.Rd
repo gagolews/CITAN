@@ -1,0 +1,105 @@
+\name{Scopus_ReadCSV}
+\alias{Scopus_ReadCSV}
+\title{Import bibliography entries from a CSV file.}
+\usage{
+  Scopus_ReadCSV(filename, stopOnErrors = TRUE,
+    dbIdentifier = "Scopus",
+    alternativeIdPattern = "^.*\\id=|\\&.*$", ...)
+}
+\arguments{
+  \item{filename}{the name of the file which the data are
+  to be read from, see \code{\link{read.csv}}.}
+
+  \item{stopOnErrors}{logical; \code{TRUE} to stop on all
+  potential parse errors or just warn otherwise.}
+
+  \item{dbIdentifier}{character or \code{NA}; database
+  identifier, helps detect parse errors, see above.}
+
+  \item{alternativeIdPattern}{character; regular expression
+  used to extract AlternativeId, \code{NA} to get the id as
+  is,}
+
+  \item{...}{further arguments to be passed to
+  \code{read.csv}.}
+}
+\value{
+  A \code{data.frame} containing the following 11 columns:
+  \tabular{ll}{ \code{Authors} \tab Author name(s),
+  comma-separated, surnames first.\cr \code{Title} \tab
+  Document title.\cr \code{Year} \tab Year of
+  publication.\cr \code{AlternativeId} \tab Unique document
+  identifier.\cr \code{SourceTitle} \tab Title of the
+  source containing the document.\cr \code{Volume} \tab
+  Volume.\cr \code{Issue} \tab Issue.\cr \code{PageStart}
+  \tab Start page; numeric.\cr \code{PageEnd} \tab End
+  page; numeric.\cr \code{Citations} \tab Number of
+  citations; numeric.\cr \code{DocumentType} \tab Type of
+  the document; see above.\cr } The object returned may be
+  imported into a local bibliometric storage via
+  \code{\link{lbsImportDocuments}}.
+}
+\description{
+  Reads bibliography entries from a UTF-8 encoded CSV file.
+}
+\details{
+
+
+  The \code{\link{read.csv}} function is used to read the
+  bibliography. You may therefore freely modify its
+  behavior by passing further arguments (\code{...}), see
+  the manual page of \code{\link{read.table}} for details.
+
+  The CSV file should consist at least of the following
+  columns. \enumerate{ \item \code{Authors}: Author name(s)
+  (surname first; multiple names are comma-separated, e.g.
+  \dQuote{Smith John, Nowak G. W.}), \item \code{Title}:
+  Document title, \item \code{Year}: Year of publication,
+  \item \code{Source.title}: Source title, e.g. journal
+  name, \item \code{Volume}: Volume number, \item
+  \code{Issue}: Issue number, \item \code{Page.start}:
+  Start page number, \item \code{Page.end}: End page
+  number, \item \code{Cited.by}: Number of citations
+  received, \item \code{Link}: String containing unique
+  document identifier, by default of the form
+  ...id=\emph{\strong{UNIQUE_ID}}&... (see
+  \code{alternativeIdPattern} parameter), \item
+  \code{Document.Type}: Document type, one of:
+  \dQuote{Article}, \dQuote{Article in Press},
+  \dQuote{Book}, \dQuote{Conference Paper},
+  \dQuote{Editorial}, \dQuote{Erratum}, \dQuote{Letter},
+  \dQuote{Note}, \dQuote{Report}, \dQuote{Review},
+  \dQuote{Short Survey}, or \code{NA} (other categories are
+  treated as \code{NA}s), \item \code{Source}: Data source
+  identifier, must be the same as the \code{dbIdentifier}
+  parameter value. It is used for parse errors detection. }
+
+  The CSV file to be read may, for example, be created by
+  \emph{SciVerse Scopus} (Export format=\emph{comma
+  separated file, .csv (e.g. Excel)}, Output=\emph{Complete
+  format} or \emph{Citations only}). Note that the exported
+  CSV file sometimes needs to be corrected by hand (wrong
+  page numbers, single double quotes in character strings
+  instead of two-double quotes etc.). We suggest to make
+  the corrections in a \dQuote{Notepad}-like application
+  (in plain text). The function tries to indicate line
+  numbers causing potential problems.
+}
+\examples{
+\dontrun{
+conn <- lbsConnect("Bibliometrics.db");
+## ...
+data <- Scopus_ReadCSV("db_Polish_MATH/Poland_MATH_1987-1993.csv");
+lbsImportDocuments(conn, data, "Poland_MATH");
+## ...
+lbsDisconnect(conn);}
+}
+\seealso{
+  \code{\link{Scopus_ASJC}},
+  \code{\link{Scopus_SourceList}},
+  \code{\link{lbsConnect}},
+  \code{\link{Scopus_ImportSources}},\cr
+  \code{\link{read.table}},
+  \code{\link{lbsImportDocuments}}
+}
+

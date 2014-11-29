@@ -1,0 +1,33 @@
+\name{lbsTidy}
+\alias{lbsTidy}
+\title{Clean up a Local Bibliometric Storage}
+\usage{
+  lbsTidy(conn, newSuveyDescription = "lbsTidy_Merged",
+    newSuveyFilename = "lbsTidy_Merged")
+}
+\arguments{
+  \item{conn}{database connection object, see
+  \code{\link{lbsConnect}}.}
+
+  \item{newSuveyDescription}{character; default survey
+  description for documents with missing survey info.}
+
+  \item{newSuveyFilename}{character; default survey
+  filename for documents with missing survey info.}
+}
+\value{
+  \code{TRUE} on success.
+}
+\description{
+  Cleans up a Local Bibliometric Storage by removing all
+  authors with no documents, fixing documents with missing
+  survey information, and executing the \code{VACUUM} SQL
+  command.
+}
+\seealso{
+  \code{\link{lbsConnect}}, \code{\link{lbsCreate}},
+  \code{\link{Scopus_ImportSources}},
+  \code{\link{lbsDeleteAllAuthorsDocuments}},
+  \code{\link{dbCommit}}, \code{\link{dbRollback}}
+}
+

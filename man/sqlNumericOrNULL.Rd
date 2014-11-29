@@ -1,0 +1,23 @@
+\name{sqlNumericOrNULL}
+\alias{sqlNumericOrNULL}
+\title{Get nullable numeric values for use in an SQL query}
+\usage{
+  sqlNumericOrNULL(value)
+}
+\arguments{
+  \item{value}{numeric vector to be processed.}
+}
+\value{
+  The function returns a character vector containing a
+  textual representations of each numeric value or
+  \code{"NULL"}.
+}
+\description{
+  Converts a numeric vector to its character representation
+  or returns \code{"NULL"}.
+}
+\seealso{
+  \code{\link{sqlSwitchOrNULL}},
+  \code{\link{sqlStringOrNULL}}
+}
+

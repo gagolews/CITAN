@@ -1,0 +1,38 @@
+\name{lbsConnect}
+\alias{lbsConnect}
+\title{Connect to a Local Bibliometric Storage}
+\usage{
+  lbsConnect(dbfilename)
+}
+\arguments{
+  \item{dbfilename}{filename of an SQLite database.}
+}
+\value{
+  An object of type \code{SQLiteConnection}, used to
+  communicate with the SQLite engine.
+}
+\description{
+  Connects to a Local Bibliometric Storage handled by the
+  SQLite engine (see \pkg{RSQLite} package documentation).
+}
+\details{
+  Do not forget to close the connection (represented by the
+  connection object returned) with the
+  \code{\link{lbsDisconnect}} function after use.
+
+  Please note that the database may be also accessed by
+  using lower-level functions from the \pkg{DBI} package
+  called on the returned connection object. The table-view
+  structure of a Local Bibliometric Storage is presented in
+  the man page of the \code{\link{lbsCreate}} function.
+}
+\examples{
+\dontrun{
+conn <- lbsConnect("Bibliometrics.db");
+## ...
+lbsDisconnect(conn);}
+}
+\seealso{
+  \code{\link{lbsCreate}}, \code{\link{lbsDisconnect}}
+}
+

@@ -1,0 +1,31 @@
+\name{as.character.authorinfo}
+\alias{as.character.authorinfo}
+\title{Coerce an authorinfo object to character string}
+\usage{
+  as.character.authorinfo(x, ...)
+}
+\arguments{
+  \item{x}{a single object of type \code{authorinfo}.}
+
+  \item{...}{unused.}
+}
+\value{
+  A character string
+}
+\description{
+  Converts an object of type \code{authorinfo} to a
+  character string. Such an object is returned by e.g.
+  \code{\link{lbsGetInfoAuthors}}.
+}
+\details{
+  An \code{authorinfo} object is a list with the following
+  components: \itemize{ \item \code{IdAuthor} --- numeric;
+  author's identifier in the table \code{Biblio_Authors},
+  \item \code{Name} --- character; author's name. }
+}
+\seealso{
+  \code{\link{print.authorinfo}},
+  \code{\link{lbsSearchAuthors}},
+  \code{\link{lbsGetInfoAuthors}}
+}
+

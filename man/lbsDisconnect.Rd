@@ -1,0 +1,23 @@
+\name{lbsDisconnect}
+\alias{lbsDisconnect}
+\title{Disconnect from a Local Bibliometric Storage}
+\usage{
+  lbsDisconnect(conn)
+}
+\arguments{
+  \item{conn}{database connection object, see
+  \code{\link{lbsConnect}}.}
+}
+\description{
+  Disconnects from a Local Bibliometric Storage.
+}
+\examples{
+\dontrun{
+conn <- lbsConnect("Bibliometrics.db");
+## ...
+lbsDisconnect(conn);}
+}
+\seealso{
+  \code{\link{lbsConnect}}
+}
+

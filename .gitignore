@@ -1,0 +1,48 @@
+# Roxygen-generated man pages
+# man/*.Rd
+
+# Autoconf
+src/Makevars
+src/icu52_found.txt
+autom4te.cache
+config.log
+config.status
+.lineno
+
+# R/RStudio files:
+*.Rproj
+.Rproj.user
+.Rhistory
+.RData
+CITAN.Rcheck
+
+# compiled/precompiled files
+*.o
+*.so
+*.dll
+*.a
+src-i386/
+src-x64/
+
+# backup files
+*~
+*.backup
+*.bak
+
+# KDevelop project files:
+*.kdev4
+.kdev4
+
+# LaTeX/knitr dust:
+*.aux
+*.log
+*.out
+cache-knitr/
+cache/
+
+# benchmark results and data
+devel/benchmarks/results*
+devel/benchmarks/figure
+devel/benchmarks/report-*.md
+devel/benchmarks/report-*.html
+devel/benchmarks/test1.csv.gz

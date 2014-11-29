@@ -1,0 +1,38 @@
+\name{lbsDeleteAllAuthorsDocuments}
+\alias{lbsDeleteAllAuthorsDocuments}
+\title{Delete all authors, documents and surveys from a Local Bibliometric Storage}
+\usage{
+  lbsDeleteAllAuthorsDocuments(conn, verbose = TRUE)
+}
+\arguments{
+  \item{conn}{database connection object, see
+  \code{\link{lbsConnect}}.}
+
+  \item{verbose}{logical; \code{TRUE} to be more verbose.}
+}
+\value{
+  \code{TRUE} on success.
+}
+\description{
+  Deletes author, citation, document, and survey
+  information from a Local Bibliometric Storage.
+}
+\details{
+  For safety reasons, an SQL transaction opened at the
+  beginning of the removal process is not committed
+  (closed) automatically. You should do manually (or
+  rollback it), see Examples below.
+}
+\examples{
+\dontrun{
+conn <- lbsConnect("Bibliometrics.db");
+lbsDeleteAllAuthorsDocuments(conn);
+dbCommit(conn);
+## ...
+lbsDisconnect(conn);}
+}
+\seealso{
+  \code{\link{lbsClear}}, \code{\link{dbCommit}},
+  \code{\link{dbRollback}}
+}
+

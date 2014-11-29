@@ -1,0 +1,29 @@
+\name{sqlTrim}
+\alias{sqlTrim}
+\title{Trim white-spaces on both sides of character strings}
+\usage{
+  sqlTrim(str, useBytes = FALSE)
+}
+\arguments{
+  \item{str}{a character vector where matches are sought,
+  or an object which can be coerced by \code{as.character}
+  to a character vector.}
+
+  \item{useBytes}{logical.  If \code{TRUE} the matching is
+  done byte-by-byte rather than character-by-character.
+  See man page for \code{\link{gsub}}.}
+}
+\value{
+  See 'Value' for \code{\link{gsub}}.
+}
+\description{
+  Trims white-spaces on both sides of a string.
+}
+\details{
+  This function uses \code{\link{gsub}}.
+}
+\seealso{
+  \code{\link{gsub}}, \code{\link{sqlEscape}},
+  \code{\link{sqlEscapeTrim}}
+}
+

@@ -1,0 +1,49 @@
+\name{Scopus_ImportSources}
+\alias{Scopus_ImportSources}
+\title{Import SciVerse Scopus coverage information and ASJC codes to a Local Bibliometric Storage}
+\usage{
+  Scopus_ImportSources(conn, verbose = T)
+}
+\arguments{
+  \item{conn}{a connection object, see
+  \code{\link{lbsConnect}}.}
+
+  \item{verbose}{logical; \code{TRUE} to display progress
+  information.}
+}
+\value{
+  \code{TRUE} on success.
+}
+\description{
+  Imports \emph{SciVerse Scopus} covered titles and their
+  ASJC codes to an empty Local Bibliometric Storage
+  (\acronym{LBS}).
+}
+\details{
+  This function should be called prior to importing any
+  document information to the LBS with the function
+  \code{\link{lbsImportDocuments}}.
+
+  Note that adding all the sources takes some time.
+
+  Only elementary ASJC and \emph{SciVerse Scopus} source
+  data read from \code{\link{Scopus_ASJC}} and
+  \code{\link{Scopus_SourceList}} will be added to the LBS
+  (\code{Biblio_Categories}, \code{Biblio_Sources},
+  \code{Biblio_SourcesCategories}).
+}
+\examples{
+\dontrun{
+conn <- lbsConnect("Bibliometrics.db");
+lbsCreate(conn);
+Scopus_ImportSources(conn);
+## ...
+lbsDisconnect(conn);}
+}
+\seealso{
+  \code{\link{Scopus_ASJC}},
+  \code{\link{Scopus_SourceList}},
+  \code{\link{Scopus_ReadCSV}}, \code{\link{lbsConnect}},
+  \code{\link{lbsCreate}}
+}
+
