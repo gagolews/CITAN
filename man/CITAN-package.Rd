@@ -124,7 +124,7 @@ webometrics, aggregation operators, arity-monotonicity,
 impact functions, impact assessment.
 }
 \author{
-Marek Gagolewski \email{gagolews@ibspan.waw.pl}
+Marek Gagolewski
 }
 \references{
 CITAN homepage, \url{http://www.ibspan.waw.pl/~gagolews/CITAN/}\cr

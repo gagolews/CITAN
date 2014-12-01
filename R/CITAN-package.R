@@ -141,7 +141,7 @@
 #' @aliases CITAN
 #' @docType package
 #' @title CITation ANalysis toolpack
-#' @author Marek Gagolewski \email{gagolews@@ibspan.waw.pl}
+#' @author Marek Gagolewski
 #' @references
 #' CITAN homepage, \url{http://www.ibspan.waw.pl/~gagolews/CITAN/}\cr
 #' GTK+ Project, \url{http://www.gtk.org/download.html}\cr
@@ -187,6 +187,7 @@
 #' @importFrom stringi stri_trim_both
 #' @importFrom stringi stri_replace_all_fixed
 #' @importFrom hash hash
+#' @importFrom hash clear
 #' @importFrom RGtk2 gtkWindowNew
 #' @importFrom RGtk2 gtkLabelNew
 #' @importFrom RGtk2 gtkProgressBarNew
@@ -202,6 +203,7 @@
 #' @importFrom RGtk2 GtkResponseType
 #' @importFrom RGtk2 rGtkDataFrame
 #' @importFrom RGtk2 gtkTreeView
+#' @importFrom RGtk2 gtkVBox
 #' @importFrom RGtk2 gtkTreeViewColumn
 #' @importFrom RGtk2 gtkCellRendererToggle
 #' @importFrom RGtk2 gSignalConnect
@@ -214,5 +216,6 @@
 #' @importFrom RSQLite dbCommit
 #' @importFrom DBI dbDriver
 #' @importFrom RSQLite dbConnect
+#' @importFrom DBI dbDisconnect
 #' @importFrom RSQLite dbListTables
 invisible(NULL)

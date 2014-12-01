@@ -3,6 +3,11 @@
 \name{Scopus_SourceList}
 \alias{Scopus_SourceList}
 \title{Scopus covered source list}
+\format{\preformatted{ NULL
+}}
+\usage{
+Scopus_SourceList
+}
 \description{
 List of Elsevier's \emph{SciVerse Scopus} covered titles (journals, conference proceedings, book series, etc.)
 }
@@ -34,9 +39,6 @@ It has the following columns.
 \code{Type} is one of \code{Book Series}, \code{Conference Proceedings}, \code{Journal}, \code{Trade Journal}
 
 The \code{data.frame} is sorted by \code{Status} (\code{Active} sources first) and then by \code{SJR_2011} (higher values first).
-}
-\author{
-Marek Gagolewski \email{gagolews@ibspan.waw.pl}
 }
 \references{
 \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}\cr

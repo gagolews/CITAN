@@ -51,12 +51,11 @@
 #' @name Scopus_SourceList
 #' @docType data
 #' @seealso \code{\link{Scopus_ASJC}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
-#' @author Marek Gagolewski \email{gagolews@@ibspan.waw.pl}
 #' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}\cr
 #' \url{http://info.scopus.com/journalmetrics/sjr.html}\cr
 #' \url{http://info.scopus.com/journalmetrics/snip.html}\cr
 #' @keywords Scopus, ASJC, journal, conference, proceedings
-invisible(NULL)
+Scopus_SourceList <- NULL # will be loaded later
 
 
 #' List of Elsevier's \emph{SciVerse Scopus} ASJC (All Science. Journals Classification)
@@ -76,7 +75,6 @@ invisible(NULL)
 #' @name Scopus_ASJC
 #' @docType data
 #' @seealso \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
-#' @author Marek Gagolewski \email{gagolews@@ibspan.waw.pl}
 #' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}
 #' @keywords Scopus, ASJC, journal
-invisible(NULL)
+Scopus_ASJC <- NULL # will be loaded later

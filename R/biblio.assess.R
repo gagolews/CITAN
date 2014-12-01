@@ -78,7 +78,7 @@
 #' @seealso \code{\link{lbsConnect}}, \code{\link{lbsGetCitations}}
 #' @export
 #' @importFrom agop index_h
-lbsAssess <- function(citseq, f=list(length, index.h), captions=c("length", "index.h"), orderByColumn=2,
+lbsAssess <- function(citseq, f=list(length, index_h), captions=c("length", "index_h"), orderByColumn=2,
 	bestRanks=20, verbose=T)
 {
 	if (!class(citseq)=="list") stop("incorrect 'citseq'");
