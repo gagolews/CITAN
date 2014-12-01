@@ -62,6 +62,7 @@
 #' ##     1     0     0     0     0     0     0
 #' ## attr(,"IdAuthor")
 #' ## [1] 39266
+#' library("agop")
 #' print(lbsAssess(citseq,
 #'    f=list(length, sum, index.h, index.g, function(x) index.rp(x,1),
 #'        function(x) sqrt(prod(index.lp(x,1))),
@@ -76,6 +77,7 @@
 #' dbDisconnect(conn);}
 #' @seealso \code{\link{lbsConnect}}, \code{\link{lbsGetCitations}}
 #' @export
+#' @importFrom agop index_h
 lbsAssess <- function(citseq, f=list(length, index.h), captions=c("length", "index.h"), orderByColumn=2,
 	bestRanks=20, verbose=T)
 {

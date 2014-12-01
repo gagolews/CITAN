@@ -184,4 +184,35 @@
 #'    Mathematical Social Sciences 56(2), 224-232.\cr
 #' Zhang J., Stevens M.A. (2009). A New and Efficient Estimation Method for the
 #'    Generalized Pareto Distribution, Technometrics 51(3), 316-325.\cr
+#' @importFrom stringi stri_trim_both
+#' @importFrom stringi stri_replace_all_fixed
+#' @importFrom hash hash
+#' @importFrom RGtk2 gtkWindowNew
+#' @importFrom RGtk2 gtkLabelNew
+#' @importFrom RGtk2 gtkProgressBarNew
+#' @importFrom RGtk2 gtkProgressBarSetText
+#' @importFrom RGtk2 gtkProgressBarSetText
+#' @importFrom RGtk2 gtkProgressBarSetFraction
+#' @importFrom RGtk2 gObjectSetData
+#' @importFrom RGtk2 gObjectGetData
+#' @importFrom RGtk2 gtkWidgetQueueDraw
+#' @importFrom RGtk2 gtkLabelSetText
+#' @importFrom RGtk2 gtkWidgetDraw
+#' @importFrom RGtk2 gtkDialogNewWithButtons
+#' @importFrom RGtk2 GtkResponseType
+#' @importFrom RGtk2 rGtkDataFrame
+#' @importFrom RGtk2 gtkTreeView
+#' @importFrom RGtk2 gtkTreeViewColumn
+#' @importFrom RGtk2 gtkCellRendererToggle
+#' @importFrom RGtk2 gSignalConnect
+#' @importFrom RGtk2 gtkCellRendererText
+#' @importFrom RGtk2 GtkWrapMode
+#' @importFrom RGtk2 gtkCheckVersion
+#' @importFrom RGtk2 gtkScrolledWindow
+#' @importFrom RSQLite dbGetInfo
+#' @importFrom RSQLite dbGetQuery
+#' @importFrom RSQLite dbCommit
+#' @importFrom DBI dbDriver
+#' @importFrom RSQLite dbConnect
+#' @importFrom RSQLite dbListTables
 invisible(NULL)

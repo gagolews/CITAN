@@ -41,6 +41,7 @@
 #' \code{\link{Scopus_ImportSources}}, \code{\link{lbsDeleteAllAuthorsDocuments}}
 #' \code{\link{dbCommit}}, \code{\link{dbRollback}}
 #' @export
+#' @importFrom RSQLite dbBeginTransaction
 lbsClear <- function(conn, verbose=TRUE)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection

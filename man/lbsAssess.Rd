@@ -60,6 +60,7 @@ print(citseq);
 ##     1     0     0     0     0     0     0
 ## attr(,"IdAuthor")
 ## [1] 39266
+library("agop")
 print(lbsAssess(citseq,
    f=list(length, sum, index.h, index.g, function(x) index.rp(x,1),
        function(x) sqrt(prod(index.lp(x,1))),

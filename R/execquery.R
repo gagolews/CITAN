@@ -31,6 +31,10 @@
 #' @param rollbackOnError logical; if \code{TRUE}, then the function executes rollback on current transaction if an exception occurs.
 #' @seealso \code{\link{dbSendQuery}}, \code{\link{dbClearResult}}, \code{\link{dbGetQuery}}
 #' @export
+#' @importFrom RSQLite dbSendQuery
+#' @importFrom RSQLite dbGetException
+#' @importFrom RSQLite dbRollback
+#' @importFrom RSQLite dbClearResult
 dbExecQuery <- function(conn, statement, rollbackOnError=FALSE)
 {
    if (!is.character(statement) || length(statement)!=1)

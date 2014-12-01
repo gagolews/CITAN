@@ -29,4 +29,5 @@ Depends:
 Imports:
     RGtk2,
     hash,
-    stringi
+    stringi,
+    DBI
