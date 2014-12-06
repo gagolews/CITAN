@@ -10,19 +10,13 @@ Authors@R: c(
     )
 Encoding: UTF-8
 BugReports: https://github.com/Rexamine/CITAN/issues
-Title: CITation ANalysis toolpack
-Description: CITAN package for (among others) quantitative
-    research in scientometrics and bibliometrics. It
-    contains various tools for preprocessing bibliographic
-    data retrieved e.g. from Elsevier's SciVerse Scopus and
-    calculating bibliometric impact of individuals.
-    Additionaly, some functions dealing with Pareto-Type II
-    (GPD) and Discretized Pareto-Type II statistical models
-    are included (e.g. Zhang-Stephens and MLE estimators,
-    goodness-of-fit and two-sample tests, confidence
-    intervals for the theoretical Hirsch index etc.). They
-    may be used to describe and analyze many phenomena
-    encountered in the social sciences.
+Title: CITation ANalysis Toolpack
+Description: Supports quantitative
+    research in scientometrics and bibliometrics. Provides
+    various tools for preprocessing bibliographic
+    data retrieved e.g. from Elsevier's SciVerse Scopus,
+    calculating bibliometric impact of individuals
+    or modeling many phenomena encountered in the social sciences.
 Depends:
     R (>= 2.15.0),
     agop,
