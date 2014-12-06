@@ -6,12 +6,12 @@
 \method{print}{authorinfo}(x, ...)
 }
 \arguments{
-\item{x}{an object of type \code{authorinfo}.}
+\item{x}{an object of class \code{authorinfo}.}
 
 \item{...}{unused.}
 }
 \description{
-Prints out an object of type \code{authorinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
+Prints out an object of class \code{authorinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
 }
 \details{
 For more information see man page for \code{\link{as.character.authorinfo}}.

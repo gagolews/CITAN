@@ -6,7 +6,7 @@
 \method{as.character}{authorinfo}(x, ...)
 }
 \arguments{
-\item{x}{a single object of type \code{authorinfo}.}
+\item{x}{a single object of class \code{authorinfo}.}
 
 \item{...}{unused.}
 }
@@ -14,7 +14,7 @@
 A character string
 }
 \description{
-Converts an object of type \code{authorinfo} to a character string.
+Converts an object of class \code{authorinfo} to a character string.
 Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
 }
 \details{

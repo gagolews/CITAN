@@ -5,8 +5,7 @@ CITAN PACKAGE CHANGELOG
 
 *******************************************************************************
 
-2012.06-1 /under development/
-   * New versioning scheme (major changes in LBS).
+2014.12-1 /2014-12-06/
    * Scopus_SourceList and Scopus_ASJC - updated (Oct 2011).
    * Scopus_ImportSources - rewritten, optimized.
    * Scopus_ReadCSV() - rewritten, allows other formats than 40 column CSVs.
@@ -18,8 +17,8 @@ CITAN PACKAGE CHANGELOG
    * lbsCreate() - new RDBS scheme (Biblio_Citations added,
        Biblio_Languages and Biblio_Countries dropped,
        allow for nondestructive Author merging - AuthorGroup field)
-   * ...
-   
+   * Many functions have been moved to the `agop` package, dependency added.
+
 
 
 *******************************************************************************
@@ -57,7 +56,7 @@ CITAN PACKAGE CHANGELOG
         Storage creation.
    * 'warnDuplicateTitles' param removed from lbsImportDocuments().
    * Function name cleanup: dbBiblio* -> lbs* (CHANGELOG updated).
-   
+
    New functions:
    * lbsSearchAuthors() - finds authors meeting given criteria.
    * lbsSearchDocuments() - finds documents meeting given criteria.
@@ -81,7 +80,7 @@ CITAN PACKAGE CHANGELOG
        codes. License information: this data are publicly available
        and hence no special permission is needed to redistribute them
        (information from Elsevier).
-       
+
    New functions:
    * sqlTrim(), sqlEscapeTrim(), sqlEscape(), sqlSwitchOrNULL(),
         sqlStringOrNULL(), sqlNumericOrNULL() prepare data of various types

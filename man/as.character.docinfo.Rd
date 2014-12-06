@@ -6,7 +6,7 @@
 \method{as.character}{docinfo}(x, ...)
 }
 \arguments{
-\item{x}{a single object of type \code{docinfo}.}
+\item{x}{a single object of class \code{docinfo}.}
 
 \item{...}{unused.}
 }
@@ -14,7 +14,7 @@
 A character string
 }
 \description{
-Converts an object of type \code{docinfo} to a character string.
+Converts an object of class \code{docinfo} to a character string.
 Such an object is  returned by e.g. \code{\link{lbsGetInfoDocuments}}.
 }
 \details{

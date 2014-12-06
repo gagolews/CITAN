@@ -169,7 +169,7 @@ lbsGetInfoDocuments <- function(conn, idDocuments)
 }
 
 
-#' Converts an object of type \code{docinfo} to a character string.
+#' Converts an object of class \code{docinfo} to a character string.
 #' Such an object is  returned by e.g. \code{\link{lbsGetInfoDocuments}}.
 #'
 #' A \code{docinfo} object is a list with the following components:
@@ -186,10 +186,11 @@ lbsGetInfoDocuments <- function(conn, idDocuments)
 #' }
 #'
 #' @title Coerce a docinfo object to character string
-#' @param x a single object of type \code{docinfo}.
+#' @param x a single object of class \code{docinfo}.
 #' @param ... unused.
 #' @return A character string
 #' @export
+#' @method as.character docinfo
 #' @seealso \code{\link{lbsSearchDocuments}},
 #' \code{\link{as.character.authorinfo}}, \code{\link{print.docinfo}},\cr
 #' \code{\link{lbsGetInfoDocuments}}
@@ -210,14 +211,15 @@ as.character.docinfo <- function(x, ...)
    return(ret);
 }
 
-#' Prints out an object of type \code{docinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoDocuments}}.
+#' Prints out an object of class \code{docinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoDocuments}}.
 #'
 #' For more information see man page for \code{\link{as.character.docinfo}}.
 #'
 #' @title Print a docinfo object
-#' @param x an object of type \code{docinfo}.
+#' @param x an object of class \code{docinfo}.
 #' @param ... unused.
 #' @export
+#' @method print docinfo
 #' @seealso \code{\link{as.character.docinfo}}, \code{\link{lbsSearchDocuments}}, \code{\link{lbsGetInfoDocuments}}
 print.docinfo <- function(x, ...)
 {
@@ -227,7 +229,7 @@ print.docinfo <- function(x, ...)
 
 
 
-#' Converts an object of type \code{authorinfo} to a character string.
+#' Converts an object of class \code{authorinfo} to a character string.
 #' Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
 #'
 #' An \code{authorinfo} object  is a list with the following components:
@@ -237,10 +239,11 @@ print.docinfo <- function(x, ...)
 #' }
 #'
 #' @title Coerce an authorinfo object to character string
-#' @param x a single object of type \code{authorinfo}.
+#' @param x a single object of class \code{authorinfo}.
 #' @param ... unused.
 #' @return A character string
 #' @export
+#' @method as.character authorinfo
 #' @seealso \code{\link{print.authorinfo}}, \code{\link{lbsSearchAuthors}}, \code{\link{lbsGetInfoAuthors}}
 as.character.authorinfo <- function(x, ...)
 {
@@ -250,18 +253,20 @@ as.character.authorinfo <- function(x, ...)
    return(ret);
 }
 
-#' Prints out an object of type \code{authorinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
+#' Prints out an object of class \code{authorinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoAuthors}}.
 #'
 #' For more information see man page for \code{\link{as.character.authorinfo}}.
 #'
 #' @title Print an authorinfo object
-#' @param x an object of type \code{authorinfo}.
+#' @param x an object of class \code{authorinfo}.
 #' @param ... unused.
+#' @method print authorinfo
 #' @export
 #' @seealso \code{\link{as.character.authorinfo}}, \code{\link{lbsSearchAuthors}}, \code{\link{lbsGetInfoAuthors}}
 print.authorinfo <- function(x, ...)
 {
    cat(as.character(x));
 }
+
 
 

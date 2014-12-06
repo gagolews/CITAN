@@ -174,8 +174,6 @@ SELECT
    JOIN Biblio_Categories
          ON DocSrcCat.IdCategoryParent=Biblio_Categories.IdCategory;
 }
-
-\if{html}{\out{<p><img src='../doc/CITAN-lbs.png' alt='Entity Relationship Diagram for a Local Bibliometric Storage' /></p>}}{}
 }
 \examples{
 \dontrun{

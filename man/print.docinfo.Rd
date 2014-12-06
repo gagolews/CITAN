@@ -6,12 +6,12 @@
 \method{print}{docinfo}(x, ...)
 }
 \arguments{
-\item{x}{an object of type \code{docinfo}.}
+\item{x}{an object of class \code{docinfo}.}
 
 \item{...}{unused.}
 }
 \description{
-Prints out an object of type \code{docinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoDocuments}}.
+Prints out an object of class \code{docinfo}. Such an object is returned by e.g. \code{\link{lbsGetInfoDocuments}}.
 }
 \details{
 For more information see man page for \code{\link{as.character.docinfo}}.

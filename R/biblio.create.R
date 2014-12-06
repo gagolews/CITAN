@@ -181,8 +181,6 @@
 #'          ON DocSrcCat.IdCategoryParent=Biblio_Categories.IdCategory;
 #' }
 #'
-#' \if{html}{\out{<p><img src='../doc/CITAN-lbs.png' alt='Entity Relationship Diagram for a Local Bibliometric Storage' /></p>}}{}
-#'
 #' @title Create a Local Bibliometric Storage
 #' @param conn a connection object, see \code{\link{lbsConnect}}.
 #' @param verbose logical; \code{TRUE} to be more verbose.
