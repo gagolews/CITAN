@@ -43,6 +43,7 @@
 #' List of authors' identifiers to be merged.
 #' The first element of each vector is the one marked by the user as \emph{Parent},
 #' and the rest are the \emph{Children}.
+#' @export
 #' @examples
 #' \dontrun{
 #' conn <- lbsConnect("Bibliometrics.db");
@@ -55,8 +56,10 @@
 #' lbsMergeAuthors(conn, listauth);
 #' dbCommit(conn);
 #' ## ...}
-#' @seealso \code{\link{lbsMergeAuthors}}, \code{\link{lbsFindDuplicateTitles}}, \code{\link{lbsGetInfoAuthors}}
-#' @export
+#' @seealso
+#' \code{\link{lbsMergeAuthors}},
+#' \code{\link{lbsFindDuplicateTitles}},
+#' \code{\link{lbsGetInfoAuthors}}
 lbsFindDuplicateAuthors <- function(conn,
    names.like=NULL,
    ignoreWords=c("van", "von", "der", "no", "author", "name", "available"),
@@ -457,10 +460,12 @@ lbsFindDuplicateAuthors <- function(conn,
 #' lbsDeleteDocuments(conn, listdoc);
 #' dbCommit(conn);
 #' ## ...}
+#' @export
 #' @return
 #' \code{TRUE} on success.
-#' @seealso \code{\link{lbsGetInfoDocuments}}, \code{\link{lbsFindDuplicateTitles}}
-#' @export
+#' @seealso
+#' \code{\link{lbsGetInfoDocuments}},
+#' \code{\link{lbsFindDuplicateTitles}}
 lbsDeleteDocuments <- function(conn, idDocuments)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -469,7 +474,7 @@ lbsDeleteDocuments <- function(conn, idDocuments)
    if (!is.numeric(idDocuments) || length(idDocuments) == 0)
       stop("incorrect 'idDocuments'.");
 
-   dbBeginTransaction(conn);
+   dbBegin(conn);
 
    for (i in 1:length(idDocuments))
    {
@@ -534,8 +539,11 @@ lbsDeleteDocuments <- function(conn, idDocuments)
 #' ## ...}
 #' @return
 #' \code{TRUE} on success.
-#' @seealso \code{\link{lbsFindDuplicateAuthors}}, \code{\link{lbsGetInfoAuthors}}, \code{\link{lbsAssess}}
 #' @export
+#' @seealso
+#' \code{\link{lbsFindDuplicateAuthors}},
+#' \code{\link{lbsGetInfoAuthors}},
+#' \code{\link{lbsAssess}}
 lbsMergeAuthors <- function(conn, idAuthors)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -543,7 +551,7 @@ lbsMergeAuthors <- function(conn, idAuthors)
    if (!is.list(idAuthors) || length(idAuthors) == 0 || !is.numeric(unlist(idAuthors)))
       stop("incorrect 'idAuthors'.");
 
-   dbBeginTransaction(conn);
+   dbBegin(conn);
 
    for (i in 1:length(idAuthors))
    {

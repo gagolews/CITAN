@@ -17,8 +17,10 @@
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
 
 
+#' @description
 #' Creates an empty Local Bibliometric Storage.
 #'
+#' @details
 #' The function may be executed only if the database contains no tables
 #' named \code{Biblio_*} and no views named \code{ViewBiblio_*}.
 #'
@@ -192,9 +194,16 @@
 #' Scopus_ImportSources(conn);
 #' ## ...
 #' lbsDisconnect(conn);}
+#'
 #' @return \code{TRUE} on success.
-#' @seealso \code{\link{lbsConnect}}, \code{\link{lbsClear}}, \code{\link{Scopus_ImportSources}}, \code{\link{lbsTidy}}
+#'
 #' @export
+#'
+#' @seealso
+#'  \code{\link{lbsConnect}},
+#'  \code{\link{lbsClear}},
+#'  \code{\link{Scopus_ImportSources}},
+#'  \code{\link{lbsTidy}}
 lbsCreate <- function(conn, verbose=TRUE)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection

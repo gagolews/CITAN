@@ -99,7 +99,7 @@ sqlSwitchOrNULL <- function(value, search, replace)
 # @seealso \code{\link{sqlTrim}}, \code{\link{sqlEscapeTrim}}
 sqlEscape <- function(str, useBytes=FALSE)
 {
-	stri_replace_all_fixed("'", "''", str)
+	stri_replace_all_fixed(str, "'", "''")
 }
 
 

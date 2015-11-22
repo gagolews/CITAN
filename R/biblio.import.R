@@ -65,6 +65,9 @@
 #' @param verbose logical; \code{TRUE} to display progress information.
 #' @return  \code{TRUE} on success.
 #' @seealso \code{\link{Scopus_ReadCSV}}, \code{\link{lbsConnect}}, \code{\link{lbsCreate}}
+#'
+#' @export
+#'
 #' @examples
 #' \dontrun{
 #' conn <- lbsConnect("Bibliometrics.db");
@@ -73,7 +76,6 @@
 #' lbsImportDocuments(conn, data, "Poland_MATH");
 #' ## ...
 #' lbsDisconnect(conn);}
-#' @export
 lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    surnameFirstnameCommaSeparated = FALSE,
    originalFilename=attr(data, "filename"),
@@ -85,9 +87,9 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    ## --------- auxiliary function -------------------------------------------
 
-   #' /internal/
-   #' Creates a new survey
-   #' @return idSurvey
+   # /internal/
+   # Creates a new survey
+   # @return idSurvey
    .lbsImportDocuments_GetSurvey <- function(conn, surveyDescription, originalFilename, verbose)
    {
       query <- sprintf("INSERT INTO Biblio_Surveys('Description', 'FileName', 'Timestamp')
@@ -105,7 +107,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    ## --------- auxiliary function -------------------------------------------
 
-   #' /internal/
+   # /internal/
    .lbsImportDocuments_Add_Get_idSource <- function(conn, sourceTitle, i, warnSourceTitle)
    {
       if (is.na(sourceTitle)) return(NA);
@@ -153,7 +155,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    ## --------- auxiliary function -------------------------------------------
 
-   #' /internal/
+   # /internal/
    .lbsImportDocuments_Add <- function(conn, record, idAuthors, idSurvey, i, surnameFirstnameCommaSeparated,
       updateDocumentIfExists, warnExactDuplicates, warnSourceTitle, verbose)
    {
@@ -355,7 +357,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    k <- 0L;
    dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
-   dbBeginTransaction(conn);
+   dbBegin(conn);
    for (i in 1:p)
    {
       # Get idAuthor (and add him/her if necessary)
@@ -387,7 +389,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
          n, surveyDescription, originalFilename));
 
    dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
-   dbBeginTransaction(conn);
+   dbBegin(conn);
    for (i in 1:n)
    {
       if (.lbsImportDocuments_Add(conn, data[i,], unlist(as.list(hashAuthors))[authors[[i]]],

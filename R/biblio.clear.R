@@ -36,17 +36,19 @@
 #' Scopus_ImportSources(conn);
 #' ## ...
 #' lbsDisconnect(conn);}
+#'
 #' @return \code{TRUE} on success.
+#' @export
+#' @importFrom RSQLite dbBegin
+#'
 #' @seealso \code{\link{lbsConnect}}, \code{\link{lbsCreate}},
 #' \code{\link{Scopus_ImportSources}}, \code{\link{lbsDeleteAllAuthorsDocuments}}
 #' \code{\link{dbCommit}}, \code{\link{dbRollback}}
-#' @export
-#' @importFrom RSQLite dbBeginTransaction
 lbsClear <- function(conn, verbose=TRUE)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
-   dbBeginTransaction(conn);
+   dbBegin(conn);
 
    objects <- dbListTables(conn);
    tables <- objects[substr(objects,1,7) == "Biblio_"];
@@ -99,15 +101,18 @@ lbsClear <- function(conn, verbose=TRUE)
 #' @param conn database connection object, see \code{\link{lbsConnect}}.
 #' @param verbose logical; \code{TRUE} to be more verbose.
 #' @return \code{TRUE} on success.
-#' @seealso \code{\link{lbsClear}}, \code{\link{dbCommit}}, \code{\link{dbRollback}}
+#' @export
 #' @examples
 #' \dontrun{
-#' conn <- lbsConnect("Bibliometrics.db");
-#' lbsDeleteAllAuthorsDocuments(conn);
-#' dbCommit(conn);
+#' conn <- lbsConnect("Bibliometrics.db")
+#' lbsDeleteAllAuthorsDocuments(conn)
+#' dbCommit(conn)
 #' ## ...
-#' lbsDisconnect(conn);}
-#' @export
+#' lbsDisconnect(conn)}
+#' @seealso
+#' \code{\link{lbsClear}},
+#' \code{\link{dbCommit}},
+#' \code{\link{dbRollback}}
 lbsDeleteAllAuthorsDocuments <- function(conn, verbose=TRUE)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -116,7 +121,7 @@ lbsDeleteAllAuthorsDocuments <- function(conn, verbose=TRUE)
    if (verbose) cat(sprintf("Deleting all author and document information... "));
 
 
-   dbBeginTransaction(conn);
+   dbBegin(conn);
 
    dbExecQuery(conn, "DELETE FROM Biblio_DocumentsSurveys", TRUE);
    dbExecQuery(conn, "DELETE FROM Biblio_AuthorsDocuments", TRUE);

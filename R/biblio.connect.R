@@ -16,10 +16,13 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with CITAN. If not, see <http://www.gnu.org/licenses/>.
 
-
+#' @title Connect to a Local Bibliometric Storage
+#'
+#' @description
 #' Connects to a Local Bibliometric Storage handled by the SQLite engine
 #' (see \pkg{RSQLite} package documentation).
 #'
+#' @details
 #' Do not forget to close the connection (represented by the connection object returned)
 #' with the \code{\link{lbsDisconnect}} function after use.
 #'
@@ -29,16 +32,16 @@
 #' Bibliometric Storage is presented in the man page of the
 #' \code{\link{lbsCreate}} function.
 #'
-#' @title Connect to a Local Bibliometric Storage
+#' @export
 #' @param dbfilename filename of an SQLite database.
 #' @return An object of type \code{SQLiteConnection}, used to communicate with the SQLite engine.
 #' @examples
 #' \dontrun{
-#' conn <- lbsConnect("Bibliometrics.db");
+#' conn <- lbsConnect("Bibliometrics.db")
 #' ## ...
-#' lbsDisconnect(conn);}
-#' @seealso \code{\link{lbsCreate}}, \code{\link{lbsDisconnect}}
-#' @export
+#' lbsDisconnect(conn)}
+#' @seealso \code{\link{lbsCreate}},
+#' \code{\link{lbsDisconnect}}
 lbsConnect <- function(dbfilename)
 {
    if (length(dbfilename)!=1 || !is.character(dbfilename))
@@ -69,13 +72,13 @@ lbsConnect <- function(dbfilename)
 #'
 #' @title Disconnect from a Local Bibliometric Storage
 #' @param conn database connection object, see \code{\link{lbsConnect}}.
+#' @export
 #' @examples
 #' \dontrun{
 #' conn <- lbsConnect("Bibliometrics.db");
 #' ## ...
 #' lbsDisconnect(conn);}
 #' @seealso \code{\link{lbsConnect}}
-#' @export
 lbsDisconnect <- function(conn)
 {
    .lbsCheckConnection(conn); # will stop on an invalid/dead connection

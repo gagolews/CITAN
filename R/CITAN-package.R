@@ -218,4 +218,14 @@
 #' @importFrom RSQLite dbConnect
 #' @importFrom DBI dbDisconnect
 #' @importFrom RSQLite dbListTables
+#' @importFrom grDevices as.graphicsAnnot
+#' @importFrom grDevices dev.interactive
+#' @importFrom grDevices devAskNewPage
+#' @importFrom graphics barplot
+#' @importFrom graphics boxplot
+#' @importFrom graphics mtext
+#' @importFrom graphics par
+#' @importFrom graphics pie
+#' @importFrom stats na.omit
+#' @importFrom utils read.csv
 invisible(NULL)

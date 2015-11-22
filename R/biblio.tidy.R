@@ -27,12 +27,12 @@
 #' @param conn database connection object, see \code{\link{lbsConnect}}.
 #' @param newSuveyDescription character; default survey description for documents with missing survey info.
 #' @param newSuveyFilename character; default survey filename for documents with missing survey info.
+#' @export
+#' @return \code{TRUE} on success.
 #' @seealso \code{\link{lbsConnect}}, \code{\link{lbsCreate}},
 #' \code{\link{Scopus_ImportSources}},
 #' \code{\link{lbsDeleteAllAuthorsDocuments}},
 #' \code{\link{dbCommit}}, \code{\link{dbRollback}}
-#' @return \code{TRUE} on success.
-#' @export
 lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename="lbsTidy_Merged")
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -64,7 +64,7 @@ lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename
       dbExecQuery(conn, query, TRUE);
       idSurvey <- (as.numeric(dbGetQuery(conn, "SELECT last_insert_rowid()")[1,1]));
 
-      dbBeginTransaction(conn);
+#       dbBegin(conn);
       for (i in 1:n)
       {
          dbExecQuery(conn, sprintf("INSERT INTO Biblio_DocumentsSurveys('IdDocument', 'IdSurvey') VALUES (%s, %s);",

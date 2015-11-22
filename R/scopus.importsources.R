@@ -81,7 +81,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
          );
       ## --------------------------------------------------------------------
 
-      dbBeginTransaction(conn);
+      dbBegin(conn);
       for (i in 1:n) dbExecQuery(conn, queries[i], TRUE);
       dbCommit(conn);
 
@@ -144,7 +144,7 @@ Scopus_ImportSources <- function(conn, verbose=T)
       omitted <- numeric(0);
       k <- 0;
       dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
-      dbBeginTransaction(conn);
+      dbBegin(conn);
       for (i in 1:n)
       {
          tryCatch(

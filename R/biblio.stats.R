@@ -56,8 +56,12 @@
 #'    documentTypes=c("Article", "Note", "Report", "Review", "Short Survey"));
 #' ## ...
 #' lbsDisconnect(conn);}
-#' @seealso \code{\link{plot.default}}, \code{\link{lbsConnect}}
+#'
 #' @export
+#'
+#' @seealso
+#' \code{\link{plot.default}},
+#' \code{\link{lbsConnect}}
 lbsDescriptiveStats <- function(conn,
    documentTypes=NULL,
    surveyDescription=NULL,

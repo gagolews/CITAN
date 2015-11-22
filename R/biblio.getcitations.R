@@ -43,6 +43,9 @@
 #'
 #' The list of citation sequences may then be used to calculate
 #' authors' impact using \code{\link{lbsAssess}} (see Examples below).
+#'
+#' @export
+#'
 #' @examples
 #' \dontrun{
 #' conn <- lbsConnect("Bibliometrics.db");
@@ -80,8 +83,9 @@
 #' ## 1  Liu X.      6  16       2       4       3  4.157609    3.316625
 #' ## ...
 #' dbDisconnect(conn);}
-#' @seealso \code{\link{lbsConnect}}, \code{\link{lbsAssess}}
-#' @export
+#' @seealso
+#' \code{\link{lbsConnect}},
+#' \code{\link{lbsAssess}}
 lbsGetCitations <- function(conn,
 	documentTypes=NULL,
 	surveyDescription=NULL,

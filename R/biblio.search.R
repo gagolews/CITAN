@@ -37,11 +37,11 @@
 #' id <- lbsSearchAuthors(conn, c("Smith\%", "Knuth D.E.", "V_n \%"));
 #' lbsGetInfoAuthors(conn, id);
 #' ## ...}
+#' @export
 #' @seealso \code{\link{lbsGetInfoAuthors}},
 #' \code{\link{lbsSearchDocuments}},
 #' \code{\link{lbsGetInfoDocuments}},\cr
 #' \code{\link{lbsFindDuplicateAuthors}}
-#' @export
 lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -102,6 +102,7 @@ lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 #'    \code{Short Survey}. \code{NULL} means no such restriction.
 #' @param surveyDescription single character string or \code{NULL}; survey description to restrict to or \code{NULL}.
 #' @param alternativeId character vector of documents' AlternativeIds.
+#' @export
 #' @return
 #' Integer vector of documents' identifiers matching given criteria.
 #' @examples
@@ -116,7 +117,6 @@ lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 #' \code{\link{lbsSearchAuthors}},
 #' \code{\link{lbsGetInfoDocuments}},\cr
 #' \code{\link{lbsFindDuplicateTitles}}
-#' @export
 lbsSearchDocuments <- function(conn, titles.like=NULL, idAuthors=NULL,
    citations.expr=NULL,
    pages.expr=NULL,
