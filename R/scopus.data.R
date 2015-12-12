@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2014 Marek Gagolewski
+## Copyright 2011-2015 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -47,6 +47,8 @@
 #'
 #' The \code{data.frame} is sorted by \code{Status} (\code{Active} sources first) and then by \code{SJR_2011} (higher values first).
 #'
+#' @export
+#'
 #' @title Scopus covered source list
 #' @name Scopus_SourceList
 #' @docType data
@@ -70,6 +72,8 @@ Scopus_SourceList <- NULL # will be loaded later
 #' and descriptions (column \code{Description}).
 #'
 #' ASJC codes are used to classify Scopus sources (see \code{\link{Scopus_SourceList}}).
+#'
+#' @export
 #'
 #' @title Scopus ASJC (All Science. Journals Classification) classification codes
 #' @name Scopus_ASJC

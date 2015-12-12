@@ -1,6 +1,6 @@
 Package: CITAN
-Version: 2015.11-1
-Date: 2015-11-22
+Version: 2015.12-1
+Date: 2015-12-12
 Type: Package
 License: LGPL (>= 3)
 Authors@R: c(
@@ -13,11 +13,11 @@ Title: CITation ANalysis Toolpack
 Description: Supports quantitative
     research in scientometrics and bibliometrics. Provides
     various tools for preprocessing bibliographic
-    data retrieved e.g. from Elsevier's SciVerse Scopus,
-    calculating bibliometric impact of individuals
+    data retrieved, e.g., from Elsevier's SciVerse Scopus,
+    computing bibliometric impact of individuals,
     or modeling many phenomena encountered in the social sciences.
 Depends:
-    R (>= 3.1.0),
+    R (>= 3.2.0),
     agop,
     RSQLite,
     RGtk2

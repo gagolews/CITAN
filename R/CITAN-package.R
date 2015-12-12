@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2014 Marek Gagolewski
+## Copyright 2011-2015 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -20,11 +20,11 @@
 #' \pkg{CITAN} is a library of functions useful in --- but not limited to ---
 #' quantitative research in the field of scientometrics.
 #' It contains various tools for preprocessing
-#' bibliographic data retrieved from e.g. Elsevier's \emph{SciVerse Scopus} and
-#' calculating bibliometric impact of individuals.
-#' Also, some functions dealing with Pareto-Type II (GPD)
+#' bibliographic data retrieved from, e.g., Elsevier's \emph{SciVerse Scopus} and
+#' computing bibliometric impact of individuals.
+#' Moreover, some functions dealing with Pareto-Type II (GPD)
 #' and Discretized Pareto-Type II statistical models
-#' are included (e.g. Zhang-Stephens and MLE estimators,
+#' are included (e.g., Zhang-Stephens and MLE estimators,
 #' goodness-of-fit and two-sample tests, confidence intervals
 #' for the theoretical Hirsch index etc.).
 #' They may be used to describe and analyze many phenomena encountered
