@@ -128,8 +128,7 @@ impact functions, impact assessment.
 Marek Gagolewski
 }
 \references{
-CITAN homepage, \url{http://www.ibspan.waw.pl/~gagolews/CITAN/}\cr
-GTK+ Project, \url{http://www.gtk.org/download.html}\cr
+GTK+ Project, \url{http://www.gtk.org}\cr
 SQLite DBMS, \url{http://www.sqlite.org/}\cr
 Dubois D., Prade H., Testemale C. (1988). Weighted fuzzy pattern matching,
    Fuzzy Sets and Systems 28, s. 313-331.\cr

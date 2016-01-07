@@ -342,6 +342,8 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
             hashAuthors[authors[[i]]] <- NA;
          }
       }
+      else
+         hashAuthors[authors[[i]]] <- NA;
    }
 
 
@@ -358,7 +360,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    k <- 0L;
    dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
    dbBegin(conn);
-   for (i in 1:p)
+   for (i in seq_along(hashAuthorNames))
    {
       # Get idAuthor (and add him/her if necessary)
       idAuthor <- dbGetQuery(conn, sprintf("SELECT IdAuthor FROM Biblio_Authors WHERE Name=%s",
