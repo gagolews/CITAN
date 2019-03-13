@@ -5,18 +5,27 @@ sudo: required
 language: r
 r_packages:
   - devtools
-  - stringi
   - testthat
 matrix:
   include:
-  - os: osx
-    osx_image: xcode9.2
   - os: linux
     r: release
+    addons:
+        apt:
+            packages:
+                - r-cran-rgtk2
   - os: linux
     r: oldrel
+    addons:
+        apt:
+            packages:
+                - r-cran-rgtk2
   - os: linux
     r: devel
+    addons:
+        apt:
+            packages:
+                - r-cran-rgtk2
 
 warnings_are_errors: true
 r_build_args: "--no-manual"
