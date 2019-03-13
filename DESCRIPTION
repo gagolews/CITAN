@@ -1,11 +1,12 @@
 Package: CITAN
-Version: 2016.01-1
-Date: 2016-01-07
+Version: 2019.03-1
+Date: 2019-03-13
 Type: Package
 License: LGPL (>= 3)
 Authors@R: c(
     person("Marek", "Gagolewski", role = c("aut", "cre"),
-    email = "gagolews@ibspan.waw.pl")
+    email = "gagolews@ibspan.waw.pl",
+    comment = c(ORCID = "0000-0003-0637-6028"))
     )
 Encoding: UTF-8
 BugReports: https://github.com/Rexamine/CITAN/issues

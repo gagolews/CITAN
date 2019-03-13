@@ -166,7 +166,7 @@
 #' Gagolewski M., Grzegorzewski P. (2011a). Axiomatic Characterizations of (quasi-)
 #' L-statistics and S-statistics and the Producer Assessment Problem,
 #; In: Galichet S., Montero J., Mauris G. (Eds.), Proc. 7th conf. European Society
-#' for Fuzzy Logic and Technology (EUSFLAT/LFA 2011), Atlantic Press, 53-58.
+#' for Fuzzy Logic and Technology (EUSFLAT/LFA 2011), Atlantis Press, 53-58.
 #' Grabisch M., Pap E., Marichal J.-L., Mesiar R. (2009). Aggregation functions,
 #'    Cambridge.\cr
 #' Gagolewski M., Grzegorzewski P. (2011b). Possibilistic analysis of arity-monotonic
