@@ -33,7 +33,7 @@ Retrieves information on given documents.
 conn <- dbBiblioConnect("Bibliometrics.db");
 ## ...
 id <- lbsSearchDocuments(conn,
-	idAuthors=lbsSearchAuthors(conn, "Knuth\\\%"));
+	idAuthors=lbsSearchAuthors(conn, "Knuth\\%"));
 lbsGetInfoDocuments(conn, id);
 ## ...}
 }
@@ -42,4 +42,3 @@ lbsGetInfoDocuments(conn, id);
 \code{\link{lbsGetInfoAuthors}},\cr
 \code{\link{as.character.authorinfo}}, \code{\link{as.character.docinfo}}
 }
-

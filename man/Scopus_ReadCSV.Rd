@@ -4,8 +4,13 @@
 \alias{Scopus_ReadCSV}
 \title{Import bibliography entries from a CSV file.}
 \usage{
-Scopus_ReadCSV(filename, stopOnErrors = TRUE, dbIdentifier = "Scopus",
-  alternativeIdPattern = "^.*\\\\id=|\\\\&.*$", ...)
+Scopus_ReadCSV(
+  filename,
+  stopOnErrors = TRUE,
+  dbIdentifier = "Scopus",
+  alternativeIdPattern = "^.*\\\\id=|\\\\&.*$",
+  ...
+)
 }
 \arguments{
 \item{filename}{the name of the file which the data are to be read from, see \code{\link{read.csv}}.}
@@ -90,4 +95,3 @@ lbsDisconnect(conn);}
 \code{\link{Scopus_ImportSources}},\cr
 \code{\link{read.table}}, \code{\link{lbsImportDocuments}}
 }
-

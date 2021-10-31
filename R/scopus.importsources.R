@@ -137,9 +137,6 @@ Scopus_ImportSources <- function(conn, verbose=T)
 
 
 
-      if (verbose) window <- .gtk2.progressBar(0, n, info="Importing source list... ");
-
-
       ## ----- exec    queries ------------------------
       omitted <- numeric(0);
       k <- 0;
@@ -173,7 +170,6 @@ Scopus_ImportSources <- function(conn, verbose=T)
             omitted <<- c(omitted, i);
          });
 
-         if (verbose) .gtk2.progressBar(i, n, window=window);
       }
       dbCommit(conn);
 

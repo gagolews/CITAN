@@ -56,7 +56,6 @@
 #' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}\cr
 #' \url{http://info.scopus.com/journalmetrics/sjr.html}\cr
 #' \url{http://info.scopus.com/journalmetrics/snip.html}\cr
-#' @keywords Scopus, ASJC, journal, conference, proceedings
 Scopus_SourceList <- NULL # will be loaded later
 
 
@@ -80,5 +79,4 @@ Scopus_SourceList <- NULL # will be loaded later
 #' @docType data
 #' @seealso \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
 #' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}
-#' @keywords Scopus, ASJC, journal
 Scopus_ASJC <- NULL # will be loaded later

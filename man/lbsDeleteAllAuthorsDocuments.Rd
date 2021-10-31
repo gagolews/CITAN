@@ -36,4 +36,3 @@ lbsDisconnect(conn)}
 \code{\link{dbCommit}},
 \code{\link{dbRollback}}
 }
-

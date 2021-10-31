@@ -21,4 +21,3 @@ lbsDisconnect(conn);}
 \seealso{
 \code{\link{lbsConnect}}
 }
-

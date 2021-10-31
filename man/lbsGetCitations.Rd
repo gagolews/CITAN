@@ -4,8 +4,13 @@
 \alias{lbsGetCitations}
 \title{Fetch authors' citation sequences}
 \usage{
-lbsGetCitations(conn, documentTypes = NULL, surveyDescription = NULL,
-  idAuthors = NULL, verbose = TRUE)
+lbsGetCitations(
+  conn,
+  documentTypes = NULL,
+  surveyDescription = NULL,
+  idAuthors = NULL,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{conn}{a connection object as produced by \code{\link{lbsConnect}}.}
@@ -84,4 +89,3 @@ dbDisconnect(conn);}
 \code{\link{lbsConnect}},
 \code{\link{lbsAssess}}
 }
-

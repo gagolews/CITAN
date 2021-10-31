@@ -20,4 +20,3 @@ For more information see man page for \code{\link{as.character.docinfo}}.
 \seealso{
 \code{\link{as.character.docinfo}}, \code{\link{lbsSearchDocuments}}, \code{\link{lbsGetInfoDocuments}}
 }
-

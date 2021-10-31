@@ -4,9 +4,16 @@
 \alias{lbsDescriptiveStats}
 \title{Perform preliminary analysis of data in a Local Bibliometric Storage}
 \usage{
-lbsDescriptiveStats(conn, documentTypes = NULL, surveyDescription = NULL,
-  which = (1L:7L), main = "", ask = (prod(par("mfcol")) < length(which) &&
-  dev.interactive()), ..., cex.caption = 1)
+lbsDescriptiveStats(
+  conn,
+  documentTypes = NULL,
+  surveyDescription = NULL,
+  which = (1L:7L),
+  main = "",
+  ask = (prod(par("mfcol")) < length(which) && dev.interactive()),
+  ...,
+  cex.caption = 1
+)
 }
 \arguments{
 \item{conn}{connection object, see \code{\link{lbsConnect}}.}
@@ -65,4 +72,3 @@ lbsDisconnect(conn);}
 /internal/
 /internal/
 }
-

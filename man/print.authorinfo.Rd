@@ -20,4 +20,3 @@ For more information see man page for \code{\link{as.character.authorinfo}}.
 \seealso{
 \code{\link{as.character.authorinfo}}, \code{\link{lbsSearchAuthors}}, \code{\link{lbsGetInfoAuthors}}
 }
-

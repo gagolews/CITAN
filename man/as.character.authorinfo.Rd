@@ -28,4 +28,3 @@ An \code{authorinfo} object  is a list with the following components:
 \seealso{
 \code{\link{print.authorinfo}}, \code{\link{lbsSearchAuthors}}, \code{\link{lbsGetInfoAuthors}}
 }
-

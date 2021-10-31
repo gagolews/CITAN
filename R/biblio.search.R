@@ -40,8 +40,7 @@
 #' @export
 #' @seealso \code{\link{lbsGetInfoAuthors}},
 #' \code{\link{lbsSearchDocuments}},
-#' \code{\link{lbsGetInfoDocuments}},\cr
-#' \code{\link{lbsFindDuplicateAuthors}}
+#' \code{\link{lbsGetInfoDocuments}}
 lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
@@ -115,8 +114,7 @@ lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
 #' ## ...}
 #' @seealso \code{\link{lbsGetInfoAuthors}},
 #' \code{\link{lbsSearchAuthors}},
-#' \code{\link{lbsGetInfoDocuments}},\cr
-#' \code{\link{lbsFindDuplicateTitles}}
+#' \code{\link{lbsGetInfoDocuments}}
 lbsSearchDocuments <- function(conn, titles.like=NULL, idAuthors=NULL,
    citations.expr=NULL,
    pages.expr=NULL,

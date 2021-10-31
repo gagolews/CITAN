@@ -26,7 +26,7 @@ Retrieves basic information on given authors.
 \dontrun{
 conn <- dbBiblioConnect("Bibliometrics.db");
 ## ...
-id <- lbsSearchAuthors(conn, c("Smith\\\%", "Knuth D.E.", "V_n \\\%"));
+id <- lbsSearchAuthors(conn, c("Smith\\%", "Knuth D.E.", "V_n \\%"));
 lbsGetInfoAuthors(conn, id);
 ## ...}
 }
@@ -35,4 +35,3 @@ lbsGetInfoAuthors(conn, id);
 \code{\link{lbsGetInfoDocuments}},\cr
 \code{\link{as.character.authorinfo}}, \code{\link{print.authorinfo}},
 }
-

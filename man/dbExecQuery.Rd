@@ -26,4 +26,3 @@ on caught errors.
 \seealso{
 \code{\link{dbSendQuery}}, \code{\link{dbClearResult}}, \code{\link{dbGetQuery}}
 }
-

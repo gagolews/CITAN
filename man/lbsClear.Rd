@@ -39,4 +39,3 @@ lbsDisconnect(conn);}
 \code{\link{Scopus_ImportSources}}, \code{\link{lbsDeleteAllAuthorsDocuments}}
 \code{\link{dbCommit}}, \code{\link{dbRollback}}
 }
-

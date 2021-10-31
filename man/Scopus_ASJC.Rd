@@ -4,7 +4,9 @@
 \name{Scopus_ASJC}
 \alias{Scopus_ASJC}
 \title{Scopus ASJC (All Science. Journals Classification) classification codes}
-\format{An object of class \code{NULL} of length 0.}
+\format{
+An object of class \code{NULL} of length 0.
+}
 \usage{
 Scopus_ASJC
 }
@@ -29,7 +31,4 @@ ASJC codes are used to classify Scopus sources (see \code{\link{Scopus_SourceLis
 \seealso{
 \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
 }
-\keyword{ASJC,}
-\keyword{Scopus,}
-\keyword{journal}
-
+\keyword{datasets}

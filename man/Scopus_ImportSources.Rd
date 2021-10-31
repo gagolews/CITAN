@@ -38,4 +38,3 @@ lbsDisconnect(conn);}
 \seealso{
 \code{\link{Scopus_ASJC}}, \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{lbsConnect}}, \code{\link{lbsCreate}}
 }
-

@@ -37,4 +37,3 @@ A \code{docinfo} object is a list with the following components:
 \code{\link{as.character.authorinfo}}, \code{\link{print.docinfo}},\cr
 \code{\link{lbsGetInfoDocuments}}
 }
-

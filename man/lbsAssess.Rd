@@ -4,8 +4,14 @@
 \alias{lbsAssess}
 \title{Calculate impact of given authors}
 \usage{
-lbsAssess(citseq, f = list(length, index_h), captions = c("length",
-  "index_h"), orderByColumn = 2, bestRanks = 20, verbose = T)
+lbsAssess(
+  citseq,
+  f = list(length, index_h),
+  captions = c("length", "index_h"),
+  orderByColumn = 2,
+  bestRanks = 20,
+  verbose = T
+)
 }
 \arguments{
 \item{citseq}{list of numeric vectors, e.g. the output of \code{\link{lbsGetCitations}}.}
@@ -78,4 +84,3 @@ dbDisconnect(conn);}
 \seealso{
 \code{\link{lbsConnect}}, \code{\link{lbsGetCitations}}
 }
-

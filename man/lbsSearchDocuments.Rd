@@ -4,9 +4,17 @@
 \alias{lbsSearchDocuments}
 \title{Find documents that satisfy given criteria}
 \usage{
-lbsSearchDocuments(conn, titles.like = NULL, idAuthors = NULL,
-  citations.expr = NULL, pages.expr = NULL, year.expr = NULL,
-  documentTypes = NULL, alternativeId = NULL, surveyDescription = NULL)
+lbsSearchDocuments(
+  conn,
+  titles.like = NULL,
+  idAuthors = NULL,
+  citations.expr = NULL,
+  pages.expr = NULL,
+  year.expr = NULL,
+  documentTypes = NULL,
+  alternativeId = NULL,
+  surveyDescription = NULL
+)
 }
 \arguments{
 \item{conn}{connection object, see \code{\link{lbsConnect}}.}
@@ -60,7 +68,5 @@ lbsGetInfoDocuments(conn, idd);
 \seealso{
 \code{\link{lbsGetInfoAuthors}},
 \code{\link{lbsSearchAuthors}},
-\code{\link{lbsGetInfoDocuments}},\cr
-\code{\link{lbsFindDuplicateTitles}}
+\code{\link{lbsGetInfoDocuments}}
 }
-

@@ -36,4 +36,3 @@ lbsDisconnect(conn)}
 \code{\link{lbsCreate}},
 \code{\link{lbsDisconnect}}
 }
-

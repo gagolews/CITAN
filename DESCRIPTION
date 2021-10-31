@@ -1,27 +1,27 @@
 Package: CITAN
-Version: 2019.03-1
-Date: 2019-03-13
+Version: 2021.11-1
+Date: 2021-11-01
 Type: Package
 License: LGPL (>= 3)
 Authors@R: c(
     person("Marek", "Gagolewski", role = c("aut", "cre"),
-    email = "gagolews@ibspan.waw.pl",
+    email = "marek@gagolewski.com",
     comment = c(ORCID = "0000-0003-0637-6028"))
     )
 Encoding: UTF-8
-BugReports: https://github.com/Rexamine/CITAN/issues
+BugReports: https://github.com/gagolews/CITAN/issues
 Title: CITation ANalysis Toolpack
 Description: Supports quantitative
     research in scientometrics and bibliometrics. Provides
     various tools for preprocessing bibliographic
     data retrieved, e.g., from Elsevier's SciVerse Scopus,
     computing bibliometric impact of individuals,
-    or modeling many phenomena encountered in the social sciences.
+    or modelling phenomena encountered in the social sciences.
+    This package is deprecated, see 'agop' instead.
 Depends:
     R (>= 3.2.0),
     agop,
-    RSQLite,
-    RGtk2
+    RSQLite
 Imports:
     hash,
     stringi,
@@ -30,4 +30,4 @@ Imports:
     graphics,
     stats,
     utils
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.2

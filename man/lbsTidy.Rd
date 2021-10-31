@@ -4,8 +4,11 @@
 \alias{lbsTidy}
 \title{Clean up a Local Bibliometric Storage}
 \usage{
-lbsTidy(conn, newSuveyDescription = "lbsTidy_Merged",
-  newSuveyFilename = "lbsTidy_Merged")
+lbsTidy(
+  conn,
+  newSuveyDescription = "lbsTidy_Merged",
+  newSuveyFilename = "lbsTidy_Merged"
+)
 }
 \arguments{
 \item{conn}{database connection object, see \code{\link{lbsConnect}}.}
@@ -29,4 +32,3 @@ SQL command.
 \code{\link{lbsDeleteAllAuthorsDocuments}},
 \code{\link{dbCommit}}, \code{\link{dbRollback}}
 }
-

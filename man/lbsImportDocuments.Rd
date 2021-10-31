@@ -4,10 +4,18 @@
 \alias{lbsImportDocuments}
 \title{Import bibliographic data into a Local Bibliometric Storage.}
 \usage{
-lbsImportDocuments(conn, data, surveyDescription = "Default survey",
-  surnameFirstnameCommaSeparated = FALSE, originalFilename = attr(data,
-  "filename"), excludeRows = NULL, updateDocumentIfExists = TRUE,
-  warnSourceTitle = TRUE, warnExactDuplicates = FALSE, verbose = TRUE)
+lbsImportDocuments(
+  conn,
+  data,
+  surveyDescription = "Default survey",
+  surnameFirstnameCommaSeparated = FALSE,
+  originalFilename = attr(data, "filename"),
+  excludeRows = NULL,
+  updateDocumentIfExists = TRUE,
+  warnSourceTitle = TRUE,
+  warnExactDuplicates = FALSE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{conn}{a connection object, see \code{\link{lbsConnect}}.}
@@ -82,4 +90,3 @@ lbsDisconnect(conn);}
 \seealso{
 \code{\link{Scopus_ReadCSV}}, \code{\link{lbsConnect}}, \code{\link{lbsCreate}}
 }
-

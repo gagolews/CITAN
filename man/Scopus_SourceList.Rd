@@ -4,7 +4,9 @@
 \name{Scopus_SourceList}
 \alias{Scopus_SourceList}
 \title{Scopus covered source list}
-\format{An object of class \code{NULL} of length 0.}
+\format{
+An object of class \code{NULL} of length 0.
+}
 \usage{
 Scopus_SourceList
 }
@@ -48,9 +50,4 @@ The \code{data.frame} is sorted by \code{Status} (\code{Active} sources first) a
 \seealso{
 \code{\link{Scopus_ASJC}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
 }
-\keyword{ASJC,}
-\keyword{Scopus,}
-\keyword{conference,}
-\keyword{journal,}
-\keyword{proceedings}
-
+\keyword{datasets}

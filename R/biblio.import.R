@@ -353,8 +353,6 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    if (verbose)
    {
       cat(sprintf("Importing %g authors... ", p));
-      window <- .gtk2.progressBar(0, p,
-         info=sprintf("Importing %g authors...", p));
    }
 
    k <- 0L;
@@ -376,7 +374,6 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
       }
       hashAuthors[hashAuthorNames[i]] <- idAuthor;
 
-      if (verbose) .gtk2.progressBar(i,p,window=window);
    }
    dbCommit(conn);
    if (verbose) cat(sprintf("%g new authors added.\n", k));
@@ -384,11 +381,6 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
    ## -------------------------------------------------------------------
 
    k <- 0L;
-
-   if (verbose)
-      window <- .gtk2.progressBar(0, n,
-         info=sprintf("Importing %g documents to %s/%s...",
-         n, surveyDescription, originalFilename));
 
    dbExecQuery(conn, "PRAGMA journal_mode = MEMORY");
    dbBegin(conn);
@@ -400,8 +392,6 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
       {
          k <- k+1L;
       }
-
-      if (verbose) .gtk2.progressBar(i,n,window=window);
    }
    dbCommit(conn);
 

@@ -162,7 +162,6 @@ lbsGetCitations <- function(conn,
 	if (verbose)
 	{
 		cat("Creating citation sequences... ");
-		window <- .gtk2.progressBar(0, n, info=sprintf("Creating %g citation sequences... ",n));
 	}
 
 	while (i <= n)
@@ -192,8 +191,6 @@ lbsGetCitations <- function(conn,
 			attr(citseq[[i]], "IdAuthor") <- idAuthors[i];
 			k <- k+1L;
 		}
-
-		if (verbose) .gtk2.progressBar(i,n,window=window);
 
 		i <- i+1L;
 	}

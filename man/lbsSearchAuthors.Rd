@@ -29,14 +29,12 @@ i.e. an underscore \code{_} matches a single character and a percent sign
 \dontrun{
 conn <- dbBiblioConnect("Bibliometrics.db");
 ## ...
-id <- lbsSearchAuthors(conn, c("Smith\\\%", "Knuth D.E.", "V_n \\\%"));
+id <- lbsSearchAuthors(conn, c("Smith\\%", "Knuth D.E.", "V_n \\%"));
 lbsGetInfoAuthors(conn, id);
 ## ...}
 }
 \seealso{
 \code{\link{lbsGetInfoAuthors}},
 \code{\link{lbsSearchDocuments}},
-\code{\link{lbsGetInfoDocuments}},\cr
-\code{\link{lbsFindDuplicateAuthors}}
+\code{\link{lbsGetInfoDocuments}}
 }
-

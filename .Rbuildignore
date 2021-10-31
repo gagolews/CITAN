@@ -16,3 +16,4 @@
 ^config\.status$
 ^\.gitignore$
 ^\.travis\.yml$
+^Makefile
