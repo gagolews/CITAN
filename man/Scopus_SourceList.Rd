@@ -15,8 +15,7 @@ List of Elsevier's \emph{SciVerse Scopus} covered titles (journals, conference p
 }
 \details{
 Last update: October 2011. The data file is based on the official and publicly available
-(no permission needed as stated by Elsevier) Scopus list of covered titles,
-see \url{http://www.info.sciverse.com/documents/files/scopus-training/resourcelibrary/xls/title_list.xls}.
+(no permission needed as stated by Elsevier) Scopus list of covered titles.
 
 This data frame consists of 30794 records.
 It has the following columns.
@@ -41,11 +40,6 @@ It has the following columns.
 \code{Type} is one of \code{Book Series}, \code{Conference Proceedings}, \code{Journal}, \code{Trade Journal}
 
 The \code{data.frame} is sorted by \code{Status} (\code{Active} sources first) and then by \code{SJR_2011} (higher values first).
-}
-\references{
-\url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}\cr
-\url{http://info.scopus.com/journalmetrics/sjr.html}\cr
-\url{http://info.scopus.com/journalmetrics/snip.html}\cr
 }
 \seealso{
 \code{\link{Scopus_ASJC}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}

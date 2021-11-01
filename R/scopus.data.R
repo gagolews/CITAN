@@ -20,8 +20,7 @@
 #' List of Elsevier's \emph{SciVerse Scopus} covered titles (journals, conference proceedings, book series, etc.)
 #'
 #' Last update: October 2011. The data file is based on the official and publicly available
-#' (no permission needed as stated by Elsevier) Scopus list of covered titles,
-#' see \url{http://www.info.sciverse.com/documents/files/scopus-training/resourcelibrary/xls/title_list.xls}.
+#' (no permission needed as stated by Elsevier) Scopus list of covered titles.
 #'
 #' This data frame consists of 30794 records.
 #' It has the following columns.
@@ -53,9 +52,6 @@
 #' @name Scopus_SourceList
 #' @docType data
 #' @seealso \code{\link{Scopus_ASJC}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
-#' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}\cr
-#' \url{http://info.scopus.com/journalmetrics/sjr.html}\cr
-#' \url{http://info.scopus.com/journalmetrics/snip.html}\cr
 Scopus_SourceList <- NULL # will be loaded later
 
 
@@ -63,8 +59,7 @@ Scopus_SourceList <- NULL # will be loaded later
 #' source classification codes.
 #'
 #' Last update: October 2011. The data file is based on the official and publicly available
-#' (no permission needed as stated by Elsevier) Scopus list of covered titles,
-#' see \url{http://www.info.sciverse.com/documents/files/scopus-training/resourcelibrary/xls/title_list.xls}.
+#' (no permission needed as stated by Elsevier) Scopus list of covered titles.
 #'
 #' It consists of 334 ASJC 4-digit integer codes (column \code{ASJC})
 #' together with their group identifiers (column \code{ASJC_Parent})
@@ -78,5 +73,4 @@ Scopus_SourceList <- NULL # will be loaded later
 #' @name Scopus_ASJC
 #' @docType data
 #' @seealso \code{\link{Scopus_SourceList}}, \code{\link{Scopus_ReadCSV}}, \code{\link{Scopus_ImportSources}}
-#' @references \url{http://www.info.sciverse.com/scopus/scopus-in-detail/facts/}
 Scopus_ASJC <- NULL # will be loaded later

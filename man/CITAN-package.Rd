@@ -17,7 +17,6 @@ For the complete list of functions, call \code{library(help="CITAN")}.
 \cr\cr
 }
 \references{
-SQLite DBMS, \url{http://www.sqlite.org/}\cr
 Dubois D., Prade H., Testemale C. (1988). Weighted fuzzy pattern matching,
    Fuzzy Sets and Systems 28, s. 313-331.\cr
 Egghe L. (2006). Theory and practise of the g-index, Scientometrics 69(1),
