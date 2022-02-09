@@ -5,8 +5,8 @@ This package is deprecated.
 For the implementation of aggregation operators,
 see [agop](https://cran.r-project.org/web/packages/agop/index.html).
 
-**Author**: [Marek Gagolewski](http://www.gagolewski.com/)
+**Author**: [Marek Gagolewski](https://www.gagolewski.com/)
 
-**CRAN entry**: http://cran.r-project.org/web/packages/CITAN/
+**CRAN entry**: https://cran.r-project.org/web/packages/CITAN/
 
 **License**: GNU LGPL-3
