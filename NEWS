@@ -1,18 +1,28 @@
 CITAN PACKAGE CHANGELOG
 
+
+*******************************************************************************
+
+2022.1.1 /2022-03-22/
+
+   * No longer depends on `hash` (to-be archived package).
+
 *******************************************************************************
 
 2021.11-1 /2021-11-01/
+
    * No longer depends on `RGtk2` (orphaned package).
 
 *******************************************************************************
 
 2015.12-2 /2015-12-12/
+
    * Various bug fixes.
 
 *******************************************************************************
 
 2014.12-1 /2014-12-06/
+
    * Scopus_SourceList and Scopus_ASJC - updated (Oct 2011).
    * Scopus_ImportSources - rewritten, optimized.
    * Scopus_ReadCSV() - rewritten, allows other formats than 40 column CSVs.
@@ -26,17 +36,16 @@ CITAN PACKAGE CHANGELOG
        allow for nondestructive Author merging - AuthorGroup field)
    * Many functions have been moved to the `agop` package, dependency added.
 
-
-
 *******************************************************************************
 
 2011.08-1 /2011-08-11/
-   * Documentation cleanup.
 
+   * Documentation cleanup.
 
 *******************************************************************************
 
 2011.05-1 /2011-05-14/
+
    * CITAN now depends on hash.
    * discrpareto2.goftest() - goodness-of-fit test for a discrete
        Pareto-Type II distribution.
@@ -50,10 +59,10 @@ CITAN PACKAGE CHANGELOG
    * lbsDescriptiveStats() - bug fixed: incorrect document count for
         1<=which<=5.
 
-
 *******************************************************************************
 
 2011.04-2 /2011-04-19/
+
    * CITAN now depends on RGtk2.
    * Case-insensitive ISSN, UniqueId, Language and authors' Names matching
         in lbsImportDocuments().
@@ -76,10 +85,10 @@ CITAN PACKAGE CHANGELOG
    * lbsDeleteDocuments() - deletes given documents.
    * lbsMergeAuthors() - merges given authors.
 
-
 *******************************************************************************
 
 2011.04-1 /2011-04-08/
+
    * CITAN now depends on R (>= 2.10.0), DBI and RSQLite.
    * Datafiles included: Scopus_ASJC, Scopus_SourceList -
        information on sources covered by Elsevier
@@ -89,6 +98,7 @@ CITAN PACKAGE CHANGELOG
        (information from Elsevier).
 
    New functions:
+
    * sqlTrim(), sqlEscapeTrim(), sqlEscape(), sqlSwitchOrNULL(),
         sqlStringOrNULL(), sqlNumericOrNULL() prepare data of various types
         for use in SQL queries.
@@ -118,10 +128,10 @@ CITAN PACKAGE CHANGELOG
    * lbsAssess() - Calculates values of impact functions
         for a given list given citation sequences.
 
-
 *******************************************************************************
 
 2011.03-2  /2011-03-23/
+
    * pareto2.phirsch(), pareto2.dhirsch() - time-optimized versions
         of phirsch() and dhirsch() for the Pareto-Type II distribution.
    * pareto2.htest()        - time-optimized
@@ -138,10 +148,10 @@ CITAN PACKAGE CHANGELOG
         for exact lower- and upper confidence bounds of the theoretical h-index
         given the value of a (sample) h-index.
 
-
 *******************************************************************************
 
 2011.03-1  /2011-03-02/
+
    * pareto2.htest.approx() - new function: Two-sample asymptotic h-test
         for equality of shape parameters for Type II-Pareto distributions
         with known scale parameter.
@@ -154,11 +164,10 @@ CITAN PACKAGE CHANGELOG
         scale parameter s>0.
    * Minor bug fixes.
 
-
 *******************************************************************************
 
 2011.02-1  /2011-02-28/
-   * Initial public release.
 
+   * First public release.
 
 *******************************************************************************

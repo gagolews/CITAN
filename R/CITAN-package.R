@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2021 Marek Gagolewski
+## Copyright 2011-2022 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -71,8 +71,6 @@
 #'
 #' @importFrom stringi stri_trim_both
 #' @importFrom stringi stri_replace_all_fixed
-#' @importFrom hash hash
-#' @importFrom hash clear
 #' @importFrom RSQLite dbGetInfo
 #' @importFrom RSQLite dbGetQuery
 #' @importFrom RSQLite dbCommit

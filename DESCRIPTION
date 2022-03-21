@@ -1,6 +1,6 @@
 Package: CITAN
-Version: 2021.11-1.9001
-Date: 2022-02-09
+Version: 2022.1.1
+Date: 2022-03-22
 Type: Package
 License: LGPL (>= 3)
 Authors@R: c(
@@ -24,7 +24,6 @@ Depends:
     agop,
     RSQLite
 Imports:
-    hash,
     stringi,
     DBI,
     grDevices,

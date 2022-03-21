@@ -27,8 +27,8 @@
 # @seealso \code{\link{sqlSwitchOrNULL}}, \code{\link{sqlStringOrNULL}}
 sqlNumericOrNULL <- function(value)
 {
-	value <- as.character(as.numeric(value));
-	ifelse(is.na(value) | is.null(value), "NULL", value);
+    value <- as.character(as.numeric(value));
+    ifelse(is.na(value) | is.null(value), "NULL", value);
 }
 
 
@@ -44,9 +44,9 @@ sqlNumericOrNULL <- function(value)
 # @seealso \code{\link{sqlNumericOrNULL}}, \code{\link{sqlSwitchOrNULL}}, \code{\link{sqlEscapeTrim}}
 sqlStringOrNULL <- function(value)
 {
-	value <- sqlEscapeTrim(value);
-	ifelse(is.na(value) | is.null(value) | nchar(value)==0,
-		"NULL", paste("'", value, "'", sep=""));
+    value <- sqlEscapeTrim(value);
+    ifelse(is.na(value) | is.null(value) | nchar(value)==0,
+        "NULL", paste("'", value, "'", sep=""));
 }
 
 
@@ -65,23 +65,27 @@ sqlStringOrNULL <- function(value)
 # @seealso \code{\link{sqlNumericOrNULL}}, \code{\link{sqlStringOrNULL}}, \code{\link{sqlTrim}}
 sqlSwitchOrNULL <- function(value, search, replace)
 {
-	stopifnot(length(search) == length(replace) && length(search) > 0);
+    stopifnot(length(search) == length(replace) && length(search) > 0)
 
-	value <- sqlEscapeTrim(value);
+    value <- sqlEscapeTrim(value)
 
-	h <- hash(keys=search, values=replace);
-	out <- sapply(value, function(x)
-	{
-		if (is.na(x) || nchar(x) == 0) return("NULL");
+    #h <- hash(keys=search, values=replace);
+    h <- new.env()
+    for (i in seq_along(replace))
+        h[ search[[i]] ] <- replace[[i]]
 
-		ret <- h[[x]];
-		ifelse(is.null(ret), "NULL", ret);
-	});
+    out <- sapply(value, function(x)
+    {
+        if (is.na(x) || nchar(x) == 0) return("NULL")
 
-	clear(h);
-	rm(h);
+        ret <- h[[x]]
+        ifelse(is.null(ret), "NULL", ret)
+    });
 
-	return(out);
+    #clear(h)
+    #rm(h)
+
+    return(out)
 }
 
 
@@ -99,7 +103,7 @@ sqlSwitchOrNULL <- function(value, search, replace)
 # @seealso \code{\link{sqlTrim}}, \code{\link{sqlEscapeTrim}}
 sqlEscape <- function(str, useBytes=FALSE)
 {
-	stri_replace_all_fixed(str, "'", "''")
+    stri_replace_all_fixed(str, "'", "''")
 }
 
 
@@ -114,7 +118,7 @@ sqlEscape <- function(str, useBytes=FALSE)
 # @seealso \code{\link{stri_replace_all_fixed}}, \code{\link{sqlEscape}}, \code{\link{sqlEscapeTrim}}
 sqlTrim <- function(str)
 {
-	stri_trim_both(str)
+    stri_trim_both(str)
 }
 
 
@@ -131,5 +135,5 @@ sqlTrim <- function(str)
 # @seealso \code{\link{sqlEscape}}, \code{\link{sqlTrim}}
 sqlEscapeTrim <- function(str)
 {
-	sqlEscape(sqlTrim(str))
+    sqlEscape(sqlTrim(str))
 }

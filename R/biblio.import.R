@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2022 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -322,7 +322,9 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    ## PREPARE authors
    authors <- strsplit(toupper(data$Authors), "[[:space:]]*,[[:space:]]*");
-   hashAuthors <- hash();
+   #hashAuthors <- hash();
+   hashAuthors <- new.env()
+
    stopifnot(length(authors) == n);
    for (i in 1:n)
    {
@@ -339,11 +341,11 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
             }
             idx <- (1:(m/2)-1)*2+1;
             authors[[i]] <- paste(authors[[i]][idx], authors[[i]][-idx], sep=" ");
-            hashAuthors[authors[[i]]] <- NA;
+            hashAuthors[[ authors[[i]] ]] <- NA;
          }
       }
       else
-         hashAuthors[authors[[i]]] <- NA;
+         hashAuthors[[ authors[[i]] ]] <- NA;
    }
 
 
@@ -372,7 +374,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
       } else {
          idAuthor <- idAuthor[1,1];
       }
-      hashAuthors[hashAuthorNames[i]] <- idAuthor;
+      hashAuthors[[ hashAuthorNames[i] ]] <- idAuthor;
 
    }
    dbCommit(conn);
@@ -397,9 +399,6 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
 
    if (verbose) cat(sprintf("Done, %g of %g new records added to %s/%s.\n", k, n, surveyDescription, originalFilename));
-
-   clear(hashAuthors);
-   rm(hashAuthors);
 
    ## -------------------------------------------------------------------
 
