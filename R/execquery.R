@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@
 #' @param conn a \code{DBI} connection object.
 #' @param statement a character string with the SQL statement to be executed.
 #' @param rollbackOnError logical; if \code{TRUE}, then the function executes rollback on current transaction if an exception occurs.
-#' @seealso \code{\link{dbSendQuery}}, \code{\link{dbClearResult}}, \code{\link{dbGetQuery}}
+#' @seealso \code{\link[DBI]{dbSendQuery}}, \code{\link[DBI]{dbClearResult}}, \code{\link[DBI]{dbGetQuery}}
 #' @export
 #' @importFrom RSQLite dbSendQuery
 #' @importFrom RSQLite dbGetException

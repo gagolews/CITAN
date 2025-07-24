@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -83,12 +83,12 @@
 lbsAssess <- function(citseq, f=list(length, index_h), captions=c("length", "index_h"), orderByColumn=2,
 	bestRanks=20, verbose=T)
 {
-	if (!class(citseq)=="list") stop("incorrect 'citseq'");
+	if (!is(citseq, "list")) stop("incorrect 'citseq'");
 	if (!is.null(bestRanks) && (!is.numeric(bestRanks) || bestRanks <= 0))
 		stop("incorrect 'bestRanks'");
 
-	if (class(f) != "list") stop("incorrect 'f'");
-	if (class(captions) != "character") stop("incorrect 'captions'");
+	if (!is(f, "list")) stop("incorrect 'f'");
+	if (!is(captions, "character")) stop("incorrect 'captions'");
 	if (length(f) != length(captions)) stop("'f' and 'captions' must be of the same length");
 
 	result <- data.frame(Name=names(citseq));

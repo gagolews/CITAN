@@ -33,6 +33,6 @@ lbsDisconnect(conn)}
 }
 \seealso{
 \code{\link{lbsClear}},
-\code{\link{dbCommit}},
-\code{\link{dbRollback}}
+\code{\link[DBI]{dbCommit}},
+\code{\link[DBI]{dbRollback}}
 }

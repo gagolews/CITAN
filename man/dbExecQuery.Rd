@@ -24,5 +24,5 @@ It has its own exception handler, which prints out detailed information
 on caught errors.
 }
 \seealso{
-\code{\link{dbSendQuery}}, \code{\link{dbClearResult}}, \code{\link{dbGetQuery}}
+\code{\link[DBI]{dbSendQuery}}, \code{\link[DBI]{dbClearResult}}, \code{\link[DBI]{dbGetQuery}}
 }

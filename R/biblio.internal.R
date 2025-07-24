@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@
 # stops if connection is invalid or dead
 .lbsCheckConnection <- function(conn)
 {
-   if (!class(conn) == "SQLiteConnection")
+   if (!is(conn, "SQLiteConnection"))
       stop("incorrect 'conn' given");
 
    dbGetInfo(conn); # check if conn is active

@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@
 #' @seealso \code{\link{lbsConnect}}, \code{\link{lbsCreate}},
 #' \code{\link{Scopus_ImportSources}},
 #' \code{\link{lbsDeleteAllAuthorsDocuments}},
-#' \code{\link{dbCommit}}, \code{\link{dbRollback}}
+#' \code{\link[DBI]{dbCommit}}, \code{\link[DBI]{dbRollback}}
 lbsTidy <- function(conn, newSuveyDescription="lbsTidy_Merged", newSuveyFilename="lbsTidy_Merged")
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection

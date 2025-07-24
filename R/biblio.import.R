@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2022 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -257,7 +257,7 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
 
    ## ------ check data ------------------------------------------------------
 
-   if (class(data) != "data.frame")
+   if (!is(data, "data.frame"))
       stop("'data' is not a data.frame.");
 
    if (ncol(data) != 11 || is.null(data$Authors) || is.null(data$Title)
@@ -268,9 +268,9 @@ lbsImportDocuments <- function(conn, data, surveyDescription="Default survey",
       stop("incorrect format of 'data'.");
 
    data$Authors <- as.character(data$Authors);
-   if (class(data$PageStart)!="numeric")       stop("column 'PageStart' in 'data' should be 'numeric'.");
-   if (class(data$PageEnd)!="numeric")         stop("column 'PageEnd' in 'data' should be 'numeric'.");
-   if (class(data$Citations)!="numeric")       stop("column 'Citations' in 'data' should be 'numeric'.");
+   if (!is(data$PageStart, "numeric"))       stop("column 'PageStart' in 'data' should be 'numeric'.");
+   if (!is(data$PageEnd, "numeric"))         stop("column 'PageEnd' in 'data' should be 'numeric'.");
+   if (!is(data$Citations, "numeric"))       stop("column 'Citations' in 'data' should be 'numeric'.");
 
 
    if (!is.null(excludeRows) && !is.numeric(excludeRows))

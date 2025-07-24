@@ -2,57 +2,30 @@
 % Please edit documentation in R/CITAN-package.R
 \docType{package}
 \name{CITAN-package}
-\alias{CITAN-package}
 \alias{CITAN}
-\title{CITation ANalysis toolpack}
+\alias{CITAN-package}
+\title{\pkg{CITAN} is a library of functions useful in
+quantitative research in the field of scientometrics.}
 \description{
-\pkg{CITAN} is a library of functions useful in --- but not limited to ---
-quantitative research in the field of scientometrics.
+The package is deprecated, see \pkg{agop} instead.
 }
 \details{
-The package is deprecated, see \pkg{agop} instead.
-
-
 For the complete list of functions, call \code{library(help="CITAN")}.
-\cr\cr
 }
 \references{
-Dubois D., Prade H., Testemale C. (1988). Weighted fuzzy pattern matching,
-   Fuzzy Sets and Systems 28, s. 313-331.\cr
-Egghe L. (2006). Theory and practise of the g-index, Scientometrics 69(1),
-   131-152.\cr
-Gagolewski M., Grzegorzewski P. (2009). A geometric approach to the construction of
-   scientific impact indices, Scientometrics 81(3), 617-634.\cr
-Gagolewski M., Debski M., Nowakiewicz M. (2009). Efficient algorithms for computing
-   ''geometric'' scientific impact indices, Research Report of Systems
-   Research Institute, Polish Academy of Sciences RB/1/2009.\cr
-Gagolewski M., Grzegorzewski P. (2010a). S-statistics and their basic properties,
-   In: Borgelt C. et al (Eds.), Combining Soft Computing and Statistical
-   Methods in Data Analysis, Springer-Verlag, 281-288.\cr
-Gagolewski M., Grzegorzewski P. (2010b). Arity-monotonic extended aggregation
-   operators, In: Hullermeier E., Kruse R., Hoffmann F. (Eds.),
-   Information Processing and Management of Uncertainty in Knowledge-Based
-   Systems, CCIS 80, Springer-Verlag, 693-702.\cr
 Gagolewski M. (2011). Bibliometric Impact Assessment with R and the CITAN Package,
-Journal of Informetrics 5(4), 678-692.\cr
-Gagolewski M., Grzegorzewski P. (2011a). Axiomatic Characterizations of (quasi-)
-L-statistics and S-statistics and the Producer Assessment Problem,
-for Fuzzy Logic and Technology (EUSFLAT/LFA 2011), Atlantis Press, 53-58.
-Grabisch M., Pap E., Marichal J.-L., Mesiar R. (2009). Aggregation functions,
-   Cambridge.\cr
-Gagolewski M., Grzegorzewski P. (2011b). Possibilistic analysis of arity-monotonic
-   aggregation operators and its relation to bibliometric impact assessment
-   of individuals, International Journal of Approximate Reasoning 52(9), 1312-1324.\cr
-Hirsch J.E. (2005). An index to quantify individual's scientific research output,
-   Proceedings of the National Academy of Sciences 102(46),
-   16569-16572.\cr
-Kosmulski M. (2007). MAXPROD - A new index for assessment of the scientific output
-   of an individual, and a comparison with the h-index, Cybermetrics 11(1).\cr
-Woeginger G.J. (2008). An axiomatic characterization of the Hirsch-index,
-   Mathematical Social Sciences 56(2), 224-232.\cr
-Zhang J., Stevens M.A. (2009). A New and Efficient Estimation Method for the
-   Generalized Pareto Distribution, Technometrics 51(3), 316-325.\cr
+   Journal of Informetrics 5(4), 678-692.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/gagolews/CITAN}
+  \item Report bugs at \url{https://github.com/gagolews/CITAN/issues}
+}
+
 }
 \author{
-Marek Gagolewski
+\strong{Maintainer}: Marek Gagolewski \email{marek@gagolewski.com} (\href{https://orcid.org/0000-0003-0637-6028}{ORCID}) [copyright holder]
+
 }
+\keyword{internal}

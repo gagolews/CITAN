@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -46,10 +46,10 @@ lbsSearchAuthors <- function(conn, names.like=NULL, group=NULL)
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
-   if (!is.null(names.like) && class(names.like) != "character")
+   if (!is.null(names.like) && !is(names.like, "character"))
       stop("'names.like' must be a character vector.");
 
-   if (!is.null(group) && class(group) != "character")
+   if (!is.null(group) && !is(group, "character"))
       stop("'group' must be a character vector.");
 
    query <- "SELECT IdAuthor FROM Biblio_Authors WHERE 1";
@@ -130,22 +130,22 @@ lbsSearchDocuments <- function(conn, titles.like=NULL, idAuthors=NULL,
    documentTypesShort <- .lbs_PrepareRestriction_DocumentTypes(conn, documentTypes);
 
 
-   if (!is.null(titles.like) && class(titles.like) != "character")
+   if (!is.null(titles.like) && !is(titles.like, "character"))
       stop("'titles.like' must be a character vector.");
 
-   if (!is.null(idAuthors) && class(idAuthors) != "numeric" && class(idAuthors) != "integer")
+   if (!is.null(idAuthors) && !is(idAuthors, "numeric"))
       stop("'idAuthors' must be a numeric vector.");
 
-   if (!is.null(citations.expr) && (class(citations.expr) != "character" || length(citations.expr)!=1))
+   if (!is.null(citations.expr) && (!is(citations.expr, "character") || length(citations.expr)!=1))
       stop("'citations.expr' must be a character string.");
 
-   if (!is.null(pages.expr) && (class(pages.expr) != "character" || length(pages.expr)!=1))
+   if (!is.null(pages.expr) && (!is(pages.expr, "character") || length(pages.expr)!=1))
       stop("'pages.expr' must be a character string.");
 
-   if (!is.null(year.expr) && (class(year.expr) != "character" || length(year.expr)!=1))
+   if (!is.null(year.expr) && (!is(year.expr, "character") || length(year.expr)!=1))
       stop("'year.expr' must be a character string.");
 
-   if (!is.null(alternativeId) && class(alternativeId) != "character")
+   if (!is.null(alternativeId) && !is(alternativeId, "character"))
       stop("'alternativeId' must be a character vector.");
 
    if (is.null(titles.like) && is.null(documentTypes) && is.null(idAuthors) && is.null(citations.expr) && is.null(pages.expr) && is.null(year.expr) && is.null(alternativeId))

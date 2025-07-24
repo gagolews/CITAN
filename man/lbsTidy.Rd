@@ -30,5 +30,5 @@ SQL command.
 \code{\link{lbsConnect}}, \code{\link{lbsCreate}},
 \code{\link{Scopus_ImportSources}},
 \code{\link{lbsDeleteAllAuthorsDocuments}},
-\code{\link{dbCommit}}, \code{\link{dbRollback}}
+\code{\link[DBI]{dbCommit}}, \code{\link[DBI]{dbRollback}}
 }

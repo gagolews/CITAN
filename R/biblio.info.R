@@ -1,6 +1,6 @@
 ## This file is part of the CITAN package for R
 ##
-## Copyright 2011-2015 Marek Gagolewski
+## Copyright 2011-2025 Marek Gagolewski
 ##
 ##
 ## CITAN is free software: you can redistribute it and/or modify
@@ -44,8 +44,7 @@ lbsGetInfoAuthors <- function(conn, idAuthors)
 {
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
-
-   if (is.null(idAuthors) || (class(idAuthors) != "numeric" && class(idAuthors) != "integer"))
+   if (is.null(idAuthors) || !is(idAuthors, "numeric"))
       stop("'idAuthors' must be a nonempty numeric vector.");
 
    query <- sprintf("SELECT IdAuthor, Name, AuthorGroup FROM Biblio_Authors WHERE IdAuthor IN (%s)",
@@ -55,7 +54,6 @@ lbsGetInfoAuthors <- function(conn, idAuthors)
    n <- nrow(res);
    out <- list();
    length(out) <- n;
-
 
 
    if (n < 1) return(NULL);
@@ -105,7 +103,7 @@ lbsGetInfoDocuments <- function(conn, idDocuments)
    .lbsCheckConnection(conn); # will stop on invalid/dead connection
 
 
-   if (is.null(idDocuments) || (class(idDocuments) != "numeric" && class(idDocuments) != "integer"))
+   if (is.null(idDocuments) || !is(idDocuments, "numeric"))
       stop("'idDocuments' must be a nonempty numeric vector.");
 
    idDocuments_str <- paste(idDocuments, collapse=",");
